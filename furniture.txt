@@ -1,8 +1,0 @@
-Cupboard
-Drawer
-Mattress
-Mirror
-Shelf
-Rug
-Pillow
-Wardrobe
