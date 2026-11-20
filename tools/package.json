@@ -1,0 +1,1 @@
+{"name":"letterday-tools","private":true,"type":"module","scripts":{"words":"node build-words.mjs"},"dependencies":{"all-the-cities":"^3.1.0","human-names":"^1.0.13","wordnet-db":"^3.1.14","world-countries":"^5.1.0"}}

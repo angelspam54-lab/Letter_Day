@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Letter Day: one letter, sixty seconds</title>
+    <meta name="description" content="Name, Animal, Place, Thing, Food. One letter a day, sixty seconds, rarer answers score more. Play daily or start a party with friends." />
+    <meta name="theme-color" content="#f2f3f6" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#111216" media="(prefers-color-scheme: dark)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Letter Day" />
+    <meta property="og:description" content="One letter. Sixty seconds. Name, Animal, Place, Thing, Food." />
+    <meta property="og:image" content="/og/default.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Letter Day" />
+    <link rel="preconnect" href="/api" />
+    <style>
+      html,body{margin:0;background:#f2f3f6}
+      @media (prefers-color-scheme: dark){html,body{background:#111216}#splash span{background:#eceef2;color:#111216}}
+      #splash{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+      #splash span{width:96px;height:96px;border-radius:22px;background:#15171c;color:#f2f3f6;font:800 70px/96px system-ui,sans-serif;text-align:center}
+    </style>
+  </head>
+  <body>
+    <div id="splash"><span>L</span></div>
+    <div id="app"></div>
+    <noscript>Letter Day needs JavaScript to run.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
