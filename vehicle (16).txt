@@ -1,0 +1,775 @@
+abandoned ship
+aeroplane
+air-to-air missile
+air-to-ground missile
+air-to-surface missile
+airbus
+aircraft
+aircraft carrier
+airliner
+airplane
+airship
+all-terrain bike
+ambulance
+amphibian
+amphibious aircraft
+amphibious vehicle
+angledozer
+antiballistic missile
+applecart
+ark
+armored car
+armored vehicle
+armoured car
+armoured vehicle
+army tank
+articulated lorry
+assault gun
+attack aircraft
+attack submarine
+auto
+autogiro
+autogyro
+automobile
+automotive vehicle
+baby buggy
+baby carriage
+baggage car
+ballistic capsule
+ballistic missile
+balloon
+banana boat
+bandwagon
+bareboat
+barge
+bark
+barouche
+barque
+barrage balloon
+barrow
+bassinet
+battle cruiser
+battleship
+battlewagon
+beach buggy
+beach waggon
+beach wagon
+berlin
+bicycle
+bicycle-built-for-two
+bike
+biplane
+birch bark
+birchbark
+birchbark canoe
+black Maria
+blimp
+blockade-runner
+bloodmobile
+boat
+bob
+bobsled
+bobsleigh
+bogey
+bogie
+bogy
+bomber
+boneshaker
+bookmobile
+bottom
+boxcar
+brig
+brigantine
+brilliant pebble
+brougham
+buckboard
+buffet car
+buggy
+bulldozer
+bumboat
+bumper car
+bus
+buzz bomb
+cab
+cabin car
+cabin cruiser
+cabin liner
+caboose
+cabriolet
+caisson
+camion
+camper
+camper trailer
+camping bus
+canal boat
+canoe
+capital ship
+capsule
+car
+car transporter
+car-ferry
+carack
+caravan
+cargo helicopter
+cargo liner
+cargo ship
+cargo vessel
+caroche
+carrack
+carriage
+carrier
+cart
+cat
+catamaran
+catboat
+cattle boat
+cattle car
+cattleship
+chair car
+chaise
+chariot
+choo-choo
+chopper
+chuck wagon
+clarence
+clipper
+clipper ship
+club car
+coach
+coach-and-four
+coal car
+coaster wagon
+cockleshell
+combat ship
+compact
+compact car
+container ship
+container vessel
+containership
+convertible
+coracle
+corsair
+corvette
+coupe
+covered wagon
+craft
+cruise liner
+cruise missile
+cruise ship
+cruiser
+cutter
+cycle
+cycle rickshaw
+dandy
+delivery truck
+delivery van
+delta wing
+derelict
+destroyer
+destroyer escort
+dhow
+diesel locomotive
+diesel-electric
+diesel-electric locomotive
+diesel-hydraulic
+diesel-hydraulic locomotive
+diner
+dinghy
+dining car
+dining compartment
+dinkey
+dinky
+dirigible
+dirt bike
+dive bomber
+dog sled
+dog sleigh
+dogcart
+dogsled
+donkey cart
+donkey engine
+doodlebug
+dory
+double-prop
+double-propeller plane
+dozer
+dragger
+drawing-room car
+dray
+dreadnaught
+dreadnought
+dredger
+drone
+droshky
+drosky
+dugout
+dugout canoe
+dump truck
+dumpcart
+dumper
+dune buggy
+dustcart
+eggbeater
+electric
+electric automobile
+electric car
+electric locomotive
+engine
+equipage
+estate car
+factory ship
+fan-jet
+fanjet
+felucca
+ferry
+ferryboat
+fighter
+fighter aircraft
+finisher
+fire engine
+fire truck
+fireboat
+fishing boat
+fishing smack
+fishing vessel
+flagship
+flat
+flatbed
+flatboat
+flatcar
+flattop
+floatplane
+flying boat
+flying bomb
+fore-and-after
+forklift
+four-in-hand
+four-wheel drive
+four-wheeler
+freight car
+freighter
+frigate
+funny wagon
+galleon
+galley
+garbage truck
+garden cart
+gas guzzler
+gas-turbine ship
+gharry
+gig
+glider
+go-cart
+go-kart
+golf cart
+golfcart
+gondola
+gondola car
+ground-effect machine
+guard boat
+guard ship
+guard's van
+guided missile
+gunboat
+gypsy cab
+gyroplane
+hack
+hackney
+hackney carriage
+hackney coach
+half track
+hand truck
+handcar
+handcart
+hang glider
+hangar queen
+hansom
+hansom cab
+hardtop
+hatchback
+heap
+hearse
+heat-seeking missile
+heavier-than-air craft
+helicopter
+hermaphrodite brig
+horse cart
+horse-cart
+horse-drawn vehicle
+horsecar
+horseless carriage
+hospital ship
+hot rod
+hot-air balloon
+hot-rod
+house trailer
+houseboat
+hovercraft
+hoy
+hulk
+hydrofoil
+hydroplane
+ice wagon
+ice yacht
+ice-wagon
+iceboat
+icebreaker
+interceptor
+iron horse
+ironclad
+jalopy
+jaunting car
+jaunty car
+jeep
+jet
+jet plane
+jet-propelled plane
+jetliner
+jinrikisha
+jolly
+jolly boat
+jumbo jet
+jumbojet
+junk
+kamikaze
+kayak
+keelboat
+keke
+ketch
+kite balloon
+knockabout
+ladder truck
+landau
+lander
+landing craft
+landrover
+launch
+laundry cart
+laundry truck
+lawn cart
+lifeboat
+lighter
+lighter-than-air craft
+lightship
+limber
+limo
+limousine
+liner
+loaner
+locomotive
+locomotive engine
+longboat
+lorry
+lounge car
+luge
+luggage van
+lugger
+lunar module
+luxury liner
+machine
+mackinaw
+mail boat
+mail car
+mailboat
+man-of-war
+manufactured home
+marsh buggy
+merchant ship
+merchantman
+meteorological balloon
+military plane
+military vehicle
+milk float
+milk wagon
+milkwagon
+minelayer
+minesweeper
+minibike
+minicab
+minicar
+minivan
+missile
+mobile home
+monocycle
+monoplane
+moped
+mosquito boat
+mosquito craft
+motor home
+motor scooter
+motor vehicle
+motorbike
+motorboat
+motorcar
+motorcycle
+motortruck
+mountain bike
+moving van
+multiengine airplane
+multiengine plane
+multistage rocket
+narrow boat
+narrow-body
+narrow-body aircraft
+narrowboat
+narrowbody aircraft
+nautilus
+nonsmoker
+nonsmoking car
+nuclear submarine
+nuclear-powered ship
+nuclear-powered submarine
+ocean liner
+off-roader
+oil tanker
+oiler
+okada
+ordinary
+ordinary bicycle
+ornithopter
+orthopter
+outboard
+outboard motorboat
+outrigger canoe
+oxcart
+pace car
+packet
+packet boat
+paddle steamer
+paddle-wheeler
+paddy wagon
+palace car
+panda car
+panel truck
+pantechnicon
+panzer
+parlor car
+parlour car
+passenger car
+passenger ship
+passenger van
+pastry cart
+patrol boat
+patrol car
+patrol ship
+patrol wagon
+pedicab
+perambulator
+personnel carrier
+phaeton
+picket
+picket boat
+picket ship
+pickup
+pickup truck
+pigboat
+pilot balloon
+pilot boat
+pilot engine
+pilotless aircraft
+pinnace
+pirate
+pirate ship
+pirogue
+plane
+pleasure boat
+pleasure craft
+pocket battleship
+police boat
+police car
+police cruiser
+police van
+police wagon
+pontoon
+pontoon plane
+pony cart
+ponycart
+post chaise
+powerboat
+prairie schooner
+prairie wagon
+pram
+privateer
+projectile
+propeller plane
+propjet
+prowl car
+pung
+punt
+push-bike
+pushcart
+pushchair
+pusher
+race car
+raceabout
+racer
+racing boat
+racing car
+racing gig
+racing shell
+racing skiff
+racing yacht
+radio-controlled aircraft
+railcar
+railroad car
+railway car
+railway locomotive
+reconnaissance plane
+reconnaissance vehicle
+recreational vehicle
+refrigerator car
+remise
+research rocket
+ricksha
+rickshaw
+rig
+rigger
+river boat
+road roller
+roadster
+robot bomb
+rocket
+rolling stock
+rowboat
+rowing boat
+runabout
+safety bicycle
+safety bike
+sailboat
+sailing boat
+sailing ship
+sailing vessel
+sailing warship
+sailplane
+saloon
+sampan
+sausage
+sausage balloon
+school ship
+schooner
+scooter
+scout car
+scow
+scrambler
+scull
+sea boat
+sea scooter
+seaplane
+secondhand car
+sedan
+self-propelled vehicle
+semi
+serving cart
+sharpie
+sharpshooter
+shay
+shell
+ship
+ship's boat
+shipwreck
+shooting brake
+shopping cart
+showboat
+shrimper
+shunter
+shuttle helicopter
+side-wheeler
+sidewinder
+single prop
+single shell
+single-propeller plane
+single-rotor helicopter
+sister ship
+skateboard
+ski-plane
+skibob
+skidder
+skiff
+skyhook
+slave ship
+sled
+sledge
+sleeper
+sleeping car
+sleigh
+slip carriage
+slip coach
+sloop
+smack
+small boat
+small ship
+smoker
+smoking car
+smoking carriage
+smoking compartment
+snowmobile
+snowplough
+snowplow
+sound truck
+sounding rocket
+space capsule
+space probe
+space shuttle
+space vehicle
+spacecraft
+spaceship
+speedboat
+sport car
+sport utility
+sports car
+squad car
+square-rigger
+stage
+stagecoach
+stanhope
+starship
+station waggon
+station wagon
+stealth aircraft
+stealth bomber
+stealth fighter
+steam locomotive
+steamboat
+steamer
+steamroller
+steamship
+step rocket
+sternwheeler
+stock car
+stockcar
+streetcar
+stroller
+sub
+subcompact
+subcompact car
+submarine
+submersible
+submersible warship
+sulky
+supertanker
+supply ship
+surface ship
+surface-to-air missile
+surfboat
+surrey
+swamp buggy
+switch engine
+tandem
+tandem bicycle
+tandem trailer
+tank
+tank car
+tank destroyer
+tank engine
+tank locomotive
+tank ship
+tanker
+tanker plane
+taxi
+taxicab
+tea cart
+tea trolley
+tea wagon
+teacart
+technical
+tender
+test rocket
+three-decker
+tin can
+tip truck
+tipper
+tipper lorry
+tipper truck
+toboggan
+torpedo boat
+torpedo-boat destroyer
+tourer
+touring car
+tow car
+tow truck
+towboat
+tower
+tracked vehicle
+traction engine
+tractor
+tractor trailer
+trail bike
+trailer
+trailer truck
+train
+training ship
+tram
+tramcar
+tramp
+tramp steamer
+transport ship
+transporter
+trap
+trawler
+treasure ship
+trial balloon
+tricycle
+trike
+trimaran
+trireme
+troika
+trolley
+trolley car
+troop carrier
+troop transport
+troopship
+truck
+trucking rig
+tub-cart
+tug
+tugboat
+tumbrel
+tumbril
+turbo-propeller plane
+turbofan
+turbojet
+turboprop
+twin-aisle airplane
+twin-prop
+twin-propeller-plane
+twinjet
+two-seater
+unicycle
+used-car
+van
+vehicle
+velocipede
+vessel
+waggon
+wagon
+wagon-lit
+wain
+war vessel
+warplane
+warship
+water cart
+water scooter
+water waggon
+water wagon
+watercraft
+watering cart
+weapons carrier
+weather ship
+welcome wagon
+whaleboat
+whaler
+whaling ship
+wheel
+wheelbarrow
+wheeled vehicle
+wherry
+whirlybird
+wide-body
+wide-body aircraft
+widebody aircraft
+windjammer
+wreck
+wrecker
+yacht
+yawl
+zeppelin

@@ -1,0 +1,494 @@
+abradant
+abrader
+abrading stone
+adjustable spanner
+adjustable wrench
+adz
+adze
+air hammer
+alligator wrench
+auger
+awl
+ax
+axe
+back saw
+backsaw
+ball-peen hammer
+band saw
+bandsaw
+barong
+battering ram
+battle-ax
+battle-axe
+beading plane
+beetle
+bender
+bevel
+bevel square
+bill
+billhook
+bit
+blade
+blade bit
+block plane
+blunt file
+bodkin
+bolo
+bolo knife
+bolt cutter
+bore bit
+borer
+bottle opener
+bottle screw
+box wrench
+brace wrench
+bradawl
+bread knife
+breast drill
+brick trowel
+bricklayer's hammer
+broad hatchet
+broadax
+broadaxe
+bucksaw
+buffer
+bull tongue
+bulldog wrench
+bullnose
+bullnosed plane
+bumper jack
+bur
+burin
+burr
+burr drill
+butcher knife
+butter knife
+buzz saw
+can opener
+cap opener
+carpenter's hammer
+carpenter's mallet
+carpenter's plane
+carpenter's saw
+carpenter's square
+carriage wrench
+carving knife
+case knife
+catling
+center bit
+center punch
+centre bit
+chain saw
+chain tongs
+chain wrench
+chainsaw
+chamfer bit
+chamfer plane
+chisel
+chopper
+church key
+cigar cutter
+circular plane
+circular saw
+clasp knife
+claw hammer
+claw hatchet
+clawhammer
+cleaver
+clincher
+clipper
+coal shovel
+cold chisel
+comb
+combination plane
+common ax
+common axe
+compass plane
+compass saw
+coping saw
+core bit
+core drill
+corkscrew
+counterbore
+countersink
+countersink bit
+crampon
+crampoon
+crank
+crank handle
+crescent wrench
+cross bit
+crosscut handsaw
+crosscut saw
+croupier's rake
+crown saw
+cutlery
+cutoff saw
+cutter
+cutting implement
+cutting tool
+dado plane
+dentist's drill
+dibber
+dibble
+die
+ditch spade
+dog wrench
+double-bitted ax
+double-bitted axe
+dovetail plane
+drawknife
+drawshave
+drill
+drill bit
+drilling bit
+drove
+drove chisel
+drum sander
+edge tool
+edger
+electric drill
+electric hammer
+electric razor
+electric sander
+electric shaver
+entrenching tool
+eolith
+expansion bit
+expansive bit
+file
+fireman's ax
+fireman's axe
+firmer chisel
+fish knife
+fishtail bit
+flat file
+flick knife
+flick-knife
+float
+folding saw
+fore plane
+fork
+fretsaw
+gang
+gangsaw
+garden rake
+garden spade
+garden tool
+garden trowel
+gavel
+gimlet
+glass cutter
+gouge
+grapnel
+grapple
+grappler
+grappling hook
+grappling iron
+graver
+graving tool
+gutter
+hack
+hack saw
+hacksaw
+half hatchet
+hammer
+hand ax
+hand axe
+hand drill
+hand mower
+hand saw
+hand shovel
+hand tool
+handheld drill
+handsaw
+hatchel
+hatchet
+hayfork
+heckle
+hedge trimmer
+hob
+hoe
+hook spanner
+hook wrench
+hunting knife
+ice ax
+ice axe
+ice pick
+icepick
+jack
+jack plane
+jackhammer
+jackknife
+jackscrew
+jigsaw
+jointer
+jointer plane
+jointing plane
+keyhole saw
+knife
+knife blade
+lance
+lancet
+latchstring
+lawn mower
+lawn tool
+letter opener
+linoleum cutter
+linoleum knife
+lister
+lister plough
+lister plow
+locking pliers
+long plane
+long-handled spade
+lopper
+lug wrench
+lumberman's saw
+mallet
+marlinespike
+marlingspike
+marlinspike
+mason's trowel
+match plane
+mattock
+maul
+meat cleaver
+metal saw
+middle buster
+middlebreaker
+miter box
+mitre box
+moldboard plow
+monkey wrench
+monkey-wrench
+motor mower
+mouldboard plough
+mower
+muller
+nailfile
+needlenose pliers
+neolith
+open-end wrench
+opener
+openside plane
+paleolith
+palette knife
+pallet
+paper cutter
+paper knife
+paperknife
+parang
+parer
+paring knife
+penknife
+percussor
+pestle
+pick
+pickax
+pickaxe
+pilot bit
+pin wrench
+pincer
+piolet
+pipe cutter
+pipe wrench
+pitchfork
+pitsaw
+plane
+planer
+planing machine
+plasterer's float
+plastering trowel
+plessor
+plexor
+pliers
+plough
+plow
+plumber's helper
+plumber's snake
+plunger
+plyers
+pneumatic drill
+pneumatic hammer
+pocket knife
+pocketknife
+pointel
+pointing trowel
+pointrel
+poleax
+poleaxe
+polisher
+portable saw
+post-hole digger
+posthole digger
+pounder
+power drill
+power hammer
+power mower
+power saw
+power tool
+pricker
+pruner
+pruning hook
+pruning knife
+pruning saw
+pruning shears
+pump-type pliers
+punch
+punch pliers
+puncher
+putty knife
+rabbet plane
+rake
+ram
+rammer
+rasp
+rat-tail file
+ratchet screwdriver
+ravehook
+razor
+razorblade
+reamer
+reap hook
+reaping hook
+reciprocating saw
+riding mower
+ripping chisel
+ripsaw
+roach clip
+roach holder
+rock bit
+rock drill
+roller bit
+round file
+rounder
+router
+router plane
+saber saw
+safety razor
+sandblaster
+sander
+saw
+saw set
+sawing machine
+sawmill
+scalpel
+scauper
+scissors
+scoop
+scoop shovel
+scorper
+scraper
+scratch awl
+screw auger
+screw jack
+screw key
+screw wrench
+screwdriver
+scribe
+scriber
+scroll saw
+scrub plane
+scuffle
+scuffle hoe
+scythe
+secateurs
+set chisel
+set square
+shaping tool
+shaver
+shear
+shears
+sheath knife
+shovel
+sickle
+sledge
+sledgehammer
+slice
+slicer
+slick
+slip-joint pliers
+smooth plane
+smoother
+smoothing plane
+snake
+snips
+snuffers
+socket wrench
+soldering iron
+spade
+spade bit
+spanner
+sparkplug wrench
+spatula
+splitsaw
+spokeshave
+spreader
+spud
+square
+stamp
+stamper
+stamping machine
+star drill
+starter
+starting handle
+steak knife
+steel-wool pad
+stemmer
+stone drill
+straight flute
+straight razor
+straight-fluted drill
+straightedge
+strickle
+stump spud
+style
+stylus
+surgical knife
+swage
+switchblade
+switchblade knife
+table knife
+table saw
+tack hammer
+tamp
+tamper
+tamping bar
+tap
+tap wrench
+taper file
+tappet wrench
+thinning shears
+threader
+tile cutter
+tin opener
+tinsnips
+tire iron
+tire tool
+tool
+toothpick
+torque wrench
+trap-and-drain auger
+trenching spade
+trepan
+triphammer
+trowel
+try square
+tube wrench
+tweezer
+twist bit
+twist drill
+two-handed saw
+two-man saw
+upset
+weed-whacker
+weeder
+whipsaw
+wimble
+wire cutter
+wire stripper
+wood chisel
+wood file
+woodworking plane
+wrench

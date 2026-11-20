@@ -1,0 +1,282 @@
+accordion
+acoustic guitar
+aeolian harp
+aeolian lyre
+baby grand
+baby grand piano
+bagpipe
+bagpipes
+balalaika
+bandoneon
+banjo
+baritone
+baritone horn
+barrel organ
+bass
+bass clarinet
+bass drum
+bass fiddle
+bass guitar
+bass horn
+bass viol
+basset horn
+basset oboe
+bassoon
+beating-reed instrument
+bell
+bombard
+bombardon
+bones
+bongo
+bongo drum
+bourdon
+bowed stringed instrument
+brass
+brass instrument
+bugle
+bull fiddle
+button accordion
+calliope
+carillon
+castanets
+celesta
+cello
+cembalo
+chanter
+chime
+chordophone
+cither
+cithern
+citole
+cittern
+clappers
+clarinet
+clarion
+clavichord
+clavier
+concert grand
+concert piano
+concertina
+conga
+contrabass
+contrabassoon
+contrafagotto
+cor anglais
+cornet
+cromorne
+crumhorn
+cymbal
+diapason
+diapason stop
+djembe
+double bass
+double bassoon
+double reed
+double-reed instrument
+drone
+drone pipe
+drum
+dulciana
+dulcimer
+electric guitar
+electric organ
+electronic instrument
+electronic musical instrument
+electronic organ
+euphonium
+fiddle
+fife
+finger cymbals
+fipple flute
+fipple pipe
+flageolet
+flue
+flue pipe
+flue stop
+fluegelhorn
+flugelhorn
+flute
+forte-piano
+free-reed
+free-reed instrument
+gamba
+gittern
+glockenspiel
+gong
+gran casa
+grand
+grand piano
+grind organ
+guitar
+hand organ
+handbell
+harmonica
+harp
+harpsichord
+hautbois
+hautboy
+heckelphone
+helicon
+high hat
+high-hat cymbal
+horn
+hornpipe
+hurdy gurdy
+hurdy-gurdy
+instrument
+jew's harp
+jews' harp
+kalimba
+kazoo
+kettle
+kettledrum
+keyboard
+keyboard instrument
+kora
+koto
+krummhorn
+labial pipe
+lagerphone
+licorice stick
+lute
+lyre
+mandola
+mandolin
+maraca
+maracas
+marimba
+mechanical piano
+melody pipe
+membranophone
+mouth bow
+mouth harp
+mouth organ
+musette
+musette pipe
+music box
+musical box
+musical instrument
+nose flute
+oboe
+oboe d'amore
+oboe da caccia
+ocarina
+orchestral bells
+organ
+organ pipe
+organ stop
+pair of virginals
+pandean pipe
+panpipe
+parlor grand
+parlor grand piano
+parlour grand
+parlour grand piano
+pennywhistle
+percussion instrument
+percussive instrument
+piano
+piano accordion
+pianoforte
+pibgorn
+piccolo
+pipe
+pipe organ
+pipework
+pitch pipe
+player piano
+post horn
+psaltery
+rain stick
+recorder
+reed
+reed instrument
+reed pipe
+reed stop
+sackbut
+samisen
+sax
+saxhorn
+saxophone
+serpent
+shamisen
+shawm
+shekere
+shepherd's pipe
+side drum
+single-reed instrument
+single-reed woodwind
+sitar
+snare
+snare drum
+sourdine
+sousaphone
+spinet
+squeeze box
+steam organ
+steel drum
+steel guitar
+stockhorn
+string
+string bass
+stringed instrument
+sweet potato
+synthesiser
+synthesizer
+syrinx
+tabor
+tabor pipe
+tabour
+talking drum
+tam-tam
+tambour
+tambourine
+tenor drum
+tenoroon
+theremin
+timbrel
+timpani
+tin whistle
+tom-tom
+transverse flute
+treble recorder
+triangle
+trigon
+trombone
+trump
+trumpet
+tuba
+tympan
+tympani
+tympanum
+uke
+ukulele
+upright
+upright piano
+vertical flute
+vibes
+vibraharp
+vibraphone
+viol
+viola
+viola d'amore
+viola da braccio
+viola da gamba
+violin
+violoncello
+virginal
+voix celeste
+vox angelica
+vox humana
+wheel fiddle
+whistle
+wind
+wind harp
+wind instrument
+wood
+woodwind
+woodwind instrument
+xylophone
+zill
+zither
+zithern
