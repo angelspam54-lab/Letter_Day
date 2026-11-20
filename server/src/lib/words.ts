@@ -45,9 +45,12 @@ function loadList(name: string): Index {
   if (idx) return idx;
   idx = { exact: new Map(), byLetter: new Map() };
   // words/<name>.txt is generated (tools/build-words.mjs); words/extra/<name>.txt holds hand-added words (Naija food, states, names...).
-  const extra = join(DIR, 'extra', `${name}.txt`);
-  const text = readFileSync(join(DIR, `${name}.txt`), 'utf8') + '\n' + (existsSync(extra) ? readFileSync(extra, 'utf8') : '');
+  // Also extra/<name>-*.txt (e.g. name-nicknames.txt). Lines starting with # are notes.
+  const extraDir = join(DIR, 'extra');
+  const extras = existsSync(extraDir) ? readdirSync(extraDir).filter((f) => f === `${name}.txt` || (f.startsWith(`${name}-`) && f.endsWith('.txt'))) : [];
+  const text = [readFileSync(join(DIR, `${name}.txt`), 'utf8'), ...extras.map((f) => readFileSync(join(extraDir, f), 'utf8'))].join('\n');
   for (const line of text.split('\n')) {
+    if (line.startsWith('#')) continue;
     const display = line.trim();
     if (!display) continue;
     const key = squash(normalize(display));

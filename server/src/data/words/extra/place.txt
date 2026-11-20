@@ -91,3 +91,17 @@ Zuma
 Idanre
 Yankari
 Kainji
+Mercury
+Venus
+Earth
+Mars
+Jupiter
+Saturn
+Uranus
+Neptune
+Pluto
+Moon
+Sun
+Milky Way
+Space
+Outer space
