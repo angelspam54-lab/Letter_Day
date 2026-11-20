@@ -30,15 +30,25 @@ export type Tier = 'only' | 'rare' | 'uncommon' | 'common' | 'pending' | 'miss';
 export const TIER_POINTS: Record<Tier, number> = { only: 30, rare: 20, uncommon: 15, common: 10, pending: 0, miss: 0 };
 export const TIER_LABEL: Record<Tier, string> = { only: 'Only you', rare: 'Rare', uncommon: 'Uncommon', common: 'Common', pending: 'Pending', miss: 'Miss' };
 
-/** Tier from the share of today's valid answers in this category that match yours (you included). */
-export function tierFor(status: Status, same: number, total: number): Tier {
+/** Imaginary players blended into rarity: the expected-answers bank counts as this many people having played... */
+export const EXPECTED_PLAYERS = 20;
+/** ...fading away as real answers come in, gone once a category has this many. */
+export const EXPECTED_FADE = 200;
+const bankWeight = (total: number) => EXPECTED_PLAYERS * Math.max(0, 1 - total / EXPECTED_FADE);
+
+/** Share of players (real plus expected) giving an answer. `expected` is the bank's share for it (0 to 1). */
+export const blendedShare = (same: number, total: number, expected = 0) =>
+  (same + bankWeight(total) * expected) / Math.max(1, total + bankWeight(total));
+
+/** Tier from the share of answers matching yours (you included), counting today's players plus the expected-answers bank.
+ *  `combo` answers ("Goat meat") count but score at most "uncommon", so stringing words together isn't a shortcut to top points. */
+export function tierFor(status: Status, same: number, total: number, expected = 0, combo = false): Tier {
   if (status === 'pending') return 'pending';
   if (status !== 'valid') return 'miss';
-  if (same <= 1) return 'only';
-  const share = same / Math.max(1, total);
-  if (share <= 0.1) return 'rare';
-  if (share <= 0.3) return 'uncommon';
-  return 'common';
+  const share = blendedShare(same, total, expected);
+  let tier: Tier = same <= 1 && bankWeight(total) * expected < 1 ? 'only' : share <= 0.1 ? 'rare' : share <= 0.3 ? 'uncommon' : 'common';
+  if (combo && (tier === 'only' || tier === 'rare')) tier = 'uncommon';
+  return tier;
 }
 
 /** Up to 15 bonus points for finishing early. */

@@ -1,0 +1,26 @@
+Firefighter
+Fireman
+Police
+Policeman
+Policewoman
+Manager
+Inspector
+Interpreter
+Guard
+Security guard
+Inventor
+Shopkeeper
+Investor
+Trader
+Tailor
+Seamstress
+Okada rider
+Keke driver
+Hairdresser
+Barber
+Vulcanizer
+Mechanic
+Pastor
+Imam
+Banker
+Lecturer

@@ -5,9 +5,7 @@ import { dirname, join } from 'node:path';
 import type { Db } from '../db/index.js';
 import { config } from '../config.js';
 import { LETTERS, daysBetween, lagosDate, letterFor } from '../../../shared/game.js';
-import {
-  CLUE_TRIES, NUDGE_COST, THEME_POINTS, THEME_TRIES, checkAnswer, checkTheme, cluePoints, letterCount, revealMask,
-} from '../../../shared/clue.js';
+import { CLUE_TRIES, NUDGE_COST, THEME_POINTS, THEME_TRIES, checkAnswer, checkTheme, cluePoints, letterCount, revealMask, shownLetters, canHint, FREE_NUDGE_AFTER } from '../../../shared/clue.js';
 import type { ClueDay, ClueGuessResponse } from '../../../shared/types.js';
 import { HttpError } from './game.js';
 
@@ -68,13 +66,13 @@ export class Clues {
         const s = st.clues[i];
         return {
           index: i, category: c.category, label: c.label, difficulty: c.difficulty, clue: c.clue,
-          mask: revealMask(s.done ? c.answer : c.answer, s.done ? letterCount(c.answer) : 1 + s.hints),
+          mask: revealMask(c.answer, s.done ? letterCount(c.answer) : shownLetters(c.answer, s.hints, s.guesses.length)),
           guesses: s.guesses, hints: s.hints, solved: s.solved, done: s.done, points: s.points,
           ...(s.done ? { answer: c.answer, fact: c.fact, solvedPct: pct((o) => o.clues[i]?.solved) } : {}),
         };
       }),
       theme: {
-        unlocked: allDone, guesses: st.theme.guesses, nudge: st.theme.nudge ? set.themeHint : null, solved: st.theme.solved, done: st.theme.done,
+        unlocked: allDone, guesses: st.theme.guesses, nudge: st.theme.nudge || st.theme.guesses.length >= FREE_NUDGE_AFTER ? set.themeHint : null, solved: st.theme.solved, done: st.theme.done,
         points: st.theme.points, ...(st.theme.done ? { answer: set.theme, solvedPct: pct((o) => o.theme.solved) } : {}),
       },
       score: st.clues.reduce((n, c) => n + c.points, 0) + st.theme.points,
@@ -119,7 +117,7 @@ export class Clues {
     const s = st.clues[index];
     if (!c || !s) throw new HttpError(400, 'No such clue');
     if (s.done) throw new HttpError(409, 'That clue is already done');
-    if (1 + s.hints >= letterCount(c.answer) - 1) throw new HttpError(400, "That's every hint for this one");
+    if (!canHint(c.answer, s.hints, s.guesses.length)) throw new HttpError(400, "That's every hint for this one");
     s.hints++;
     await this.save(playerId, date, set, st);
     return this.view(playerId, date, set, st);

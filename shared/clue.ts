@@ -1,13 +1,23 @@
 // "The Clue": six riddles that share the day's letter and a hidden theme. Rules + typed-answer matching.
 
-export const CLUE_TRIES = 3;
-export const THEME_TRIES = 3;
-/** Points for solving on try 1 / 2 / 3; each revealed letter costs HINT_COST (never below CLUE_MIN). */
-export const CLUE_POINTS = [100, 70, 40];
-export const HINT_COST = 20;
+export const CLUE_TRIES = 4;
+export const THEME_TRIES = 4;
+/** Points for solving on try 1 / 2 / 3 / 4; each letter you pay to reveal costs HINT_COST (never below CLUE_MIN). */
+export const CLUE_POINTS = [100, 80, 60, 40];
+export const HINT_COST = 10;
 export const CLUE_MIN = 10;
-export const THEME_POINTS = [150, 100, 50];
-export const NUDGE_COST = 30;
+export const THEME_POINTS = [150, 110, 70, 40];
+export const NUDGE_COST = 15;
+/** After this many wrong theme guesses the nudge shows for free. */
+export const FREE_NUDGE_AFTER = 2;
+
+/** Letters shown before any guess: the first, plus one more for every 6 letters (long answers get a head start). */
+export const freeLetters = (answer: string) => 1 + Math.floor(letterCount(answer) / 6);
+/** Letters shown now: the head start, every paid hint, and one free letter per wrong guess; never the whole word. */
+export const shownLetters = (answer: string, hints: number, wrong: number) =>
+  Math.min(letterCount(answer) - 1, freeLetters(answer) + hints + wrong);
+/** A paid hint is possible while at least two letters are still hidden. */
+export const canHint = (answer: string, hints: number, wrong: number) => shownLetters(answer, hints, wrong) < letterCount(answer) - 1;
 
 export function cluePoints(tries: number, hints: number): number {
   return Math.max(CLUE_MIN, CLUE_POINTS[Math.min(tries, CLUE_TRIES) - 1] - hints * HINT_COST);

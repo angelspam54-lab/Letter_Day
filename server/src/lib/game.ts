@@ -2,13 +2,14 @@ import type { Db, Queryable } from '../db/index.js';
 import { config } from '../config.js';
 import {
   CORE, DAILY_SECONDS, TIER_POINTS, addDays, bonusCandidates, daysBetween, lagosDate, letterFor, levelFromXp, nextLagosMidnight,
-  speedBonus, tierFor, xpFor, type Category, type Status, type Tier,
+  speedBonus, tierFor, blendedShare, xpFor, type Category, type Status, type Tier,
 } from '../../../shared/game.js';
 import type {
   AnswerResult, BoardEntry, DailyResult, DayInfo, GroupDetail, GroupSummary, Player, Popular, SharePreview, Stats,
 } from '../../../shared/types.js';
 import { hashToken, newToken, shareId as makeShareId, uuid } from './ids.js';
-import { countFor, judge } from './words.js';
+import { COMBO, countFor, judge } from './words.js';
+import { expectedShare } from './expected.js';
 
 export class HttpError extends Error {
   constructor(public status: number, message: string) { super(message); }
@@ -200,8 +201,10 @@ export class Game {
       const status = eff(r);
       const same = status === 'valid' ? counts.get(`${r.category}|${r.norm}`) ?? 1 : 0;
       const total = totals.get(r.category) ?? 0;
-      const tier = tierFor(status, same, total);
-      s.answers.push({ category: r.category, raw: r.raw, display: r.display || r.raw, status, tier, points: TIER_POINTS[tier], same, pct: total ? Math.round((same / total) * 100) : 0, reason: r.reason ?? undefined });
+      const expected = status === 'valid' ? expectedShare(r.category, r.norm) : 0;
+      const tier = tierFor(status, same, total, expected, r.reason === COMBO);
+      const pct = status === 'valid' ? Math.round(blendedShare(same, total, expected) * 100) : 0;
+      s.answers.push({ category: r.category, raw: r.raw, display: r.display || r.raw, status, tier, points: TIER_POINTS[tier], same, pct, reason: r.reason ?? undefined });
     }
     for (const s of byPlayer.values()) s.score = s.answers.reduce((n, a) => n + a.points, 0) + (s.answers.some((a) => a.points > 0) ? s.speed : 0);
     const ranked = [...byPlayer.values()].sort((a, b) => b.score - a.score);

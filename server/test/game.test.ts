@@ -4,7 +4,7 @@ import { createDb, type Db } from '../src/db/index.js';
 import { migrate } from '../src/db/migrate.js';
 import { Game } from '../src/lib/game.js';
 import { Parties } from '../src/lib/party.js';
-import { judge } from '../src/lib/words.js';
+import { judge, COMBO } from '../src/lib/words.js';
 import { createApp } from '../src/app.js';
 import { LETTERS, letterFor, tierFor, bonusCandidates } from '../../shared/game.js';
 import type { PartyState } from '../../shared/types.js';
@@ -35,6 +35,28 @@ async function answersFor(letter: string, pick = 0) {
 }
 
 describe('rules', () => {
+  it('accepts swapped letters, full names and combo answers', () => {
+    expect(judge('country', 'V', 'Veit Nam')).toMatchObject({ status: 'valid', norm: 'vietnam' });
+    expect(judge('place', 'V', 'Viet Nam').status).toBe('valid');
+    expect(judge('name', 'V', 'Victor Osimhen').status).toBe('valid');
+    expect(judge('name', 'V', 'Victor Osimhen').reason).toBeUndefined();
+    for (const [cat, letter, text] of [['food', 'D', 'Duck eggs'], ['food', 'C', 'Camel milk'], ['thing', 'V', 'Van tyre'], ['thing', 'V', 'Van tire']] as const) {
+      expect(judge(cat, letter, text), text).toMatchObject({ status: 'valid', reason: COMBO });
+    }
+    expect(judge('food', 'D', 'Duck eggs').norm).toBe(judge('food', 'D', 'Duck egg').norm);
+    expect(judge('food', 'G', 'Goat meat').status).toBe('valid');
+    expect(judge('food', 'V', 'Very meat').status).toBe('pending'); // "very" isn't a thing we know
+  });
+
+  it('blends the expected-answers bank into rarity and caps combos', () => {
+    expect(tierFor('valid', 1, 1, 0)).toBe('only');           // nobody expected it
+    expect(tierFor('valid', 1, 1, 0.35)).toBe('common');      // e.g. Dog: most people say it
+    expect(tierFor('valid', 1, 1, 0.08)).toBe('uncommon');
+    expect(tierFor('valid', 1, 1, 0, true)).toBe('uncommon'); // combos top out at uncommon
+    expect(tierFor('valid', 400, 1000, 0.35)).toBe('common');  // with many real players, real shares rule
+    expect(tierFor('valid', 1, 1000, 0.35)).toBe('only');
+  });
+
   it('cycles through every letter before repeating, never twice in a row', () => {
     const first = Array.from({ length: LETTERS.length }, (_, i) => letterFor(i));
     expect(new Set(first).size).toBe(LETTERS.length);
@@ -82,11 +104,13 @@ describe('daily', () => {
     expect(r1.result.answers[0].tier).toBe('only');
     await expect(game.submit(a.player, ans, at(25))).rejects.toThrow(/already played/);
 
-    // Player B gives the same answers: both drop from "only" to common.
+    // Player B gives the same answers: both drop from "only". With only two real players the expected-answers
+    // bank still counts for a lot, so a shared but unusual answer is "rare" rather than "common".
     await game.start(b.player, at(30));
     await game.submit(b.player, ans, at(50));
     const again = (await game.result((await game.playerByToken(a.token)), day.date))!;
-    expect(again.answers[0]).toMatchObject({ tier: 'common', same: 2, pct: 100 });
+    expect(again.answers[0].same).toBe(2);
+    expect(again.answers[0].tier).not.toBe('only');
     expect(again.players).toBe(2);
 
     // Next day: streak 2.
@@ -283,17 +307,20 @@ describe('the clue', () => {
     expect(JSON.stringify(d)).not.toContain('lpha');
     expect(d.theme.unlocked).toBe(false);
     // Clue 0: one wrong, then a typo that still counts.
-    expect((await clues.guess(p.id, 0, 'nope', T0)).result).toBe('wrong');
+    const miss = await clues.guess(p.id, 0, 'nope', T0);
+    expect(miss.result).toBe('wrong');
+    expect(miss.day.clues[0].mask.replace(/_/g, '').length).toBe(2); // a wrong guess shows another letter
     const r = await clues.guess(p.id, 0, `${L}lpah`, T0);
     expect(r.result).toBe('correct');
-    expect(r.day.clues[0]).toMatchObject({ solved: true, points: 70, answer: `${L}lpha` });
-    // Clue 1: hint then solve first try = 100 - 20.
-    d = await clues.hint(p.id, 1, T0);
+    expect(r.day.clues[0]).toMatchObject({ solved: true, points: 80, answer: `${L}lpha` });
+    // Clue 1: 8 letters start with 2 showing; a hint shows a 3rd; solve first try = 100 - 10.
     expect(d.clues[1].mask.replace(/_/g, '').length).toBe(2);
-    expect((await clues.guess(p.id, 1, `${L}ardvark`, T0)).day.clues[1].points).toBe(80);
+    d = await clues.hint(p.id, 1, T0);
+    expect(d.clues[1].mask.replace(/_/g, '').length).toBe(3);
+    expect((await clues.guess(p.id, 1, `${L}ardvark`, T0)).day.clues[1].points).toBe(90);
     // Clue 2: close guess, then out of tries.
     expect((await clues.guess(p.id, 2, `${L}msterdan`, T0)).result).toBe('correct');
-    for (let i = 0; i < 3; i++) await clues.guess(p.id, 3, 'zzzzz', T0);
+    for (let i = 0; i < 4; i++) await clues.guess(p.id, 3, 'zzzzz', T0);
     d = await clues.day(p.id, T0);
     expect(d.clues[3]).toMatchObject({ done: true, solved: false, points: 0, answer: `${L}nchor` });
     await expect(clues.guess(p.id, 3, 'x', T0)).rejects.toThrow(/already done/);
@@ -301,12 +328,14 @@ describe('the clue', () => {
     await clues.guess(p.id, 4, `${L}pple pie`, T0);
     await clues.guess(p.id, 5, `${L}mber`, T0);
     // Theme: natural phrasing counts.
-    expect((await clues.theme(p.id, 'planets?', T0)).result).toBe('wrong');
+    const wrong = await clues.theme(p.id, 'planets?', T0);
+    expect(wrong.result).toBe('wrong');
+    expect(wrong.day.theme.nudge).toBeNull(); // the free nudge comes after two wrong guesses
     const t = await clues.theme(p.id, "it's all about outer space", T0);
     expect(t.result).toBe('correct');
-    expect(t.day.theme).toMatchObject({ solved: true, points: 100, answer: 'Outer Space' });
+    expect(t.day.theme).toMatchObject({ solved: true, points: 110, answer: 'Outer Space' });
     expect(t.day.finished).toBe(true);
-    expect(t.day.score).toBe(70 + 80 + 100 + 0 + 100 + 100 + 100);
+    expect(t.day.score).toBe(80 + 90 + 100 + 0 + 100 + 100 + 110);
     expect(checkTheme('Astronomy!', set.themeAccept)).toBe(true);
     expect(checkTheme('spaceships', set.themeAccept)).toBe(false);
   });

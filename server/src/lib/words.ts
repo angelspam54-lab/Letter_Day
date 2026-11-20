@@ -1,6 +1,6 @@
 // Answer checking: normalise what was typed, check the starting letter, then look it up in the category's
 // lists (with plural and one-typo tolerance). Unknown-but-plausible answers are "pending", never rejected.
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import type { Category, Status } from '../../../shared/game.js';
@@ -24,12 +24,14 @@ export function normalize(s: string): string {
 }
 const squash = (s: string) => s.replace(/ /g, '');
 
+/** True when a and b differ by at most one typo: a missing, extra or wrong letter, or two letters swapped ("Veitnam"). */
 function levenshtein1(a: string, b: string): boolean {
   if (Math.abs(a.length - b.length) > 1) return false;
   let i = 0, j = 0, edits = 0;
   while (i < a.length && j < b.length) {
     if (a[i] === b[j]) { i++; j++; continue; }
     if (++edits > 1) return false;
+    if (a.length === b.length && a[i] === b[j + 1] && a[i + 1] === b[j]) { i += 2; j += 2; continue; }
     if (a.length > b.length) i++; else if (b.length > a.length) j++; else { i++; j++; }
   }
   return edits + (a.length - i) + (b.length - j) <= 1;
@@ -42,7 +44,10 @@ function loadList(name: string): Index {
   let idx = lists.get(name);
   if (idx) return idx;
   idx = { exact: new Map(), byLetter: new Map() };
-  for (const line of readFileSync(join(DIR, `${name}.txt`), 'utf8').split('\n')) {
+  // words/<name>.txt is generated (tools/build-words.mjs); words/extra/<name>.txt holds hand-added words (Naija food, states, names...).
+  const extra = join(DIR, 'extra', `${name}.txt`);
+  const text = readFileSync(join(DIR, `${name}.txt`), 'utf8') + '\n' + (existsSync(extra) ? readFileSync(extra, 'utf8') : '');
+  for (const line of text.split('\n')) {
     const display = line.trim();
     if (!display) continue;
     const key = squash(normalize(display));
@@ -63,6 +68,15 @@ export function countFor(category: Category, letter: string): number {
   return SOURCES[category].reduce((n, src) => n + (loadList(src).byLetter.get(l)?.length ?? 0), 0);
 }
 
+/** Every word we know, in any category: the first part of a combo answer ("Goat" in "Goat meat") can come from anywhere. */
+let everyList: string[] | null = null;
+const knownWord = (key: string) => (everyList ??= readdirSync(DIR).filter((f) => f.endsWith('.txt')).map((f) => f.slice(0, -4)))
+  .some((src) => loadList(src).exact.has(key));
+const plurals = (key: string) => [key, key.replace(/ies$/, 'y'), key.replace(/es$/, ''), key.replace(/s$/, '')];
+
+/** Reason stored on combo answers: a known word plus a word from the category ("Goat meat", "Van tyre"). They count, but score at most "uncommon". */
+export const COMBO = 'combo';
+
 export interface Judgement { status: Status; norm: string; display: string; reason?: string }
 
 const title = (s: string) => s.replace(/\b\w/g, (c) => c.toUpperCase());
@@ -76,7 +90,7 @@ export function judge(category: Category, letter: string, raw: string): Judgemen
     return { status: 'invalid', norm: key, display: text, reason: `Doesn't start with ${letter.toUpperCase()}` };
   }
   if (key.length < 2) return { status: 'invalid', norm: key, display: text, reason: 'Too short' };
-  const candidates = [key, key.replace(/ies$/, 'y'), key.replace(/es$/, ''), key.replace(/s$/, '')];
+  const candidates = plurals(key);
   for (const src of SOURCES[category]) {
     const idx = loadList(src);
     for (const c of candidates) {
@@ -90,6 +104,18 @@ export function judge(category: Category, letter: string, raw: string): Judgemen
       const idx = loadList(src);
       const near = idx.byLetter.get(key[0])?.find((w) => levenshtein1(w, key));
       if (near) { const hit = idx.exact.get(near)!; return { status: 'valid', norm: near, display: /^[a-z]/.test(hit) ? title(hit) : hit }; }
+    }
+  }
+  const words = n.split(' ');
+  if (words.length >= 2) {
+    // Full names: a known first name plus any surname ("Victor Osimhen").
+    if (category === 'name' && loadList('name').exact.has(words[0])) return { status: 'valid', norm: key, display: title(text) };
+    // Combos: something we know + a word from this category ("Goat meat", "Duck egg", "Van tyre", "Victoria Island").
+    const head = plurals(words[words.length - 1]).reverse(); // singular first
+    const modifier = words.slice(0, -1).join('');
+    const hit = head.find((h) => SOURCES[category].some((src) => loadList(src).exact.has(h)));
+    if (hit && modifier.length >= 2 && plurals(modifier).some(knownWord)) {
+      return { status: 'valid', norm: modifier + hit, display: title(text), reason: COMBO }; // "Duck eggs" and "Duck egg" are one answer
     }
   }
   return { status: 'pending', norm: key, display: title(text), reason: 'Not in our lists yet' };
