@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
 import type { ClueDay, CluePublic } from '../../../shared/types';
-import { CLUE_TRIES, HINT_COST, NUDGE_COST, THEME_TRIES } from '../../../shared/clue';
+import { CLUE_TRIES, HINT_COST, NUDGE_COST, THEME_POINTS, THEME_TRIES } from '../../../shared/clue';
 import { CATEGORY_COLOR } from '../../../shared/palette';
 import type { App } from '../App';
 import { TopBar } from '../components/TopBar';
@@ -44,7 +44,7 @@ export function Clue({ app }: { app: App }) {
           <LetterTile letter={d.letter} size="lg" />
           <div>
             <h1 class="h2">Six clues. One letter. One hidden theme.</h1>
-            <p class="small muted">Every answer starts with {d.letter}. Three guesses each; reveal letters if you're stuck. Then work out what links them.</p>
+            <p class="small muted">Every answer starts with {d.letter}. You get {CLUE_TRIES} guesses, and each wrong guess shows another letter. Then work out what links them.</p>
           </div>
         </header>
         <div class="clue-progress" aria-label={`${solved} of 6 solved, ${d.score} points`}>
@@ -86,7 +86,7 @@ function ClueCard({ c, open, onOpen, update }: { c: CluePublic; open: boolean; o
       const r = await api.clueGuess(c.index, text);
       const now = r.day.clues[c.index];
       if (r.result === 'correct') { fx.correct(); setNote(''); }
-      else { fx.wrong(); setNote(now.done ? '' : r.result === 'close' ? 'So close! Check the spelling.' : 'Not it.'); }
+      else { fx.wrong(); setNote(now.done ? '' : r.result === 'close' ? 'So close! Check the spelling.' : 'Not it. Here\'s another letter.'); }
       setText('');
       update(r.day);
     } catch (err) { toast(err instanceof ApiError ? err.message : 'Could not send that'); } finally { setBusy(false); }
@@ -113,7 +113,7 @@ function ClueCard({ c, open, onOpen, update }: { c: CluePublic; open: boolean; o
       {open && !c.done && (
         <div class="cc-tools">
           <span class={`small ${note.startsWith('So') ? 'warn' : 'muted'}`} aria-live="polite">{note || (c.guesses.length ? `Tried: ${c.guesses.join(', ')}` : '')}</span>
-          <button class="btn small quiet" type="button" onClick={hint}>Reveal a letter (−{HINT_COST})</button>
+          {(c.mask.match(/_/g) ?? []).length > 1 && <button class="btn small quiet" type="button" onClick={hint}>Reveal a letter (−{HINT_COST})</button>}
         </div>
       )}
       {c.done && <p class="cc-fact small">{c.fact}{c.solvedPct !== undefined && <span class="muted"> · {c.solvedPct}% of players got it</span>}</p>}
@@ -140,7 +140,7 @@ function ThemeCard({ d, open, onOpen, update }: { d: ClueDay; open: boolean; onO
     <section class={`theme-card ${t.unlocked ? '' : 'locked'} ${t.done ? (t.solved ? 'ok' : 'no') : ''}`} onClick={t.unlocked && !open ? onOpen : undefined}>
       <span class="kicker">Finale · the hidden theme</span>
       {!t.unlocked ? (
-        <p class="muted">Finish all six clues to unlock it. Then name what links the answers, for up to 150 bonus points.</p>
+        <p class="muted">Finish all six clues to unlock it. Then name what links the answers, for up to {THEME_POINTS[0]} bonus points.</p>
       ) : t.done ? (
         <>
           <h2 class="h2">{t.answer}</h2>

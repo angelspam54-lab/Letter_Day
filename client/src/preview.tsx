@@ -3,7 +3,7 @@ import { render } from 'preact';
 import { useState } from 'preact/hooks';
 import sets from '@clues';
 import type { ClueDay } from '../../shared/types';
-import { checkAnswer, checkTheme, cluePoints, CLUE_TRIES, letterCount, NUDGE_COST, revealMask, THEME_POINTS, THEME_TRIES } from '../../shared/clue';
+import { checkAnswer, checkTheme, cluePoints, CLUE_TRIES, letterCount, NUDGE_COST, revealMask, THEME_POINTS, THEME_TRIES, shownLetters, canHint, FREE_NUDGE_AFTER } from '../../shared/clue';
 import { api, ApiError } from './lib/api';
 import { store } from './lib/storage';
 import type { App } from './App';
@@ -31,13 +31,13 @@ function view(s: Set, st: State): ClueDay {
       const x = st.clues[i];
       return {
         index: i, category: c.category, label: c.label, difficulty: c.difficulty, clue: c.clue,
-        mask: revealMask(c.answer, x.done ? letterCount(c.answer) : 1 + x.hints),
+        mask: revealMask(c.answer, x.done ? letterCount(c.answer) : shownLetters(c.answer, x.hints, x.guesses.length)),
         guesses: x.guesses, hints: x.hints, solved: x.solved, done: x.done, points: x.points,
         ...(x.done ? { answer: c.answer, fact: c.fact } : {}),
       };
     }),
     theme: {
-      unlocked: st.clues.every((c) => c.done), guesses: st.theme.guesses, nudge: st.theme.nudge ? s.themeHint : null,
+      unlocked: st.clues.every((c) => c.done), guesses: st.theme.guesses, nudge: st.theme.nudge || st.theme.guesses.length >= FREE_NUDGE_AFTER ? s.themeHint : null,
       solved: st.theme.solved, done: st.theme.done, points: st.theme.points, ...(st.theme.done ? { answer: s.theme } : {}),
     },
     score: score(st), finished: st.theme.done,
@@ -58,7 +58,7 @@ Object.assign(api, {
   },
   clueHint: async (i: number) => {
     const st = load(current); const x = st.clues[i];
-    if (1 + x.hints >= letterCount(current.clues[i].answer) - 1) fail("That's every hint for this one");
+    if (!canHint(current.clues[i].answer, x.hints, x.guesses.length)) fail("That's every hint for this one");
     x.hints++; save(current, st); return view(current, st);
   },
   clueTheme: async (raw: string) => {

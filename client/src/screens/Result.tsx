@@ -57,6 +57,7 @@ export function Result({ app }: { app: App }) {
                 <div class="r-ans">
                   <b>{a.display || <span class="muted">No answer</span>}</b>
                   {a.status === 'invalid' && <span class="small warn">{a.reason}</span>}
+                  {a.status === 'valid' && a.reason === 'combo' && <span class="small muted">Combo answer: it counts, worth up to 15.</span>}
                   {a.status === 'pending' && <span class="small muted">Not in our lists yet. It counts if 3 players give it, or your group votes it in.</span>}
                   {pop.length > 0 && <span class="small muted">Others said: {pop.map((p) => `${p.display} (${p.pct}%)`).join(', ')}</span>}
                 </div>
