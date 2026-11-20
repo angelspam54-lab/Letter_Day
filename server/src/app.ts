@@ -118,6 +118,11 @@ export function createApp(db: Db, opts: { clientDist?: string; clueSets?: ClueSe
     const b = await c.req.json<{ guess: string }>();
     return c.json(await clues.theme((await me(c)).id, String(b.guess ?? '')));
   });
+  api.post('/clue/giveup', async (c) => {
+    const b = await c.req.json<{ index: number }>();
+    if (!Number.isInteger(b.index)) throw new HttpError(400, 'Bad request');
+    return c.json(await clues.giveUp((await me(c)).id, b.index));
+  });
   api.post('/clue/nudge', async (c) => c.json(await clues.nudge((await me(c)).id)));
 
   api.post('/party', async (c) => { await me(c); return c.json({ code: parties.create() }); });

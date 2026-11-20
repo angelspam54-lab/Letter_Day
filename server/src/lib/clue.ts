@@ -138,6 +138,16 @@ export class Clues {
     return { result: ok ? 'correct' : 'wrong', day: await this.view(playerId, date, set, st) };
   }
 
+  /** Gives up on a clue: shows the answer for 0 points, so it no longer blocks the theme. */
+  async giveUp(playerId: string, index: number, now = new Date()): Promise<ClueDay> {
+    const { date, set } = this.today(now);
+    const st = await this.load(playerId, date, set);
+    const s = st.clues[index];
+    if (!set.clues[index] || !s) throw new HttpError(400, 'No such clue');
+    if (!s.done) { s.done = true; s.points = 0; await this.save(playerId, date, set, st); }
+    return this.view(playerId, date, set, st);
+  }
+
   async nudge(playerId: string, now = new Date()): Promise<ClueDay> {
     const { date, set } = this.today(now);
     const st = await this.load(playerId, date, set);

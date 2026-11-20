@@ -337,6 +337,11 @@ describe('the clue', () => {
     expect(t.day.finished).toBe(true);
     expect(t.day.score).toBe(80 + 90 + 100 + 0 + 100 + 100 + 110);
     expect(checkTheme('Astronomy!', set.themeAccept)).toBe(true);
+    // Giving up shows the answer for 0 points and unlocks the theme.
+    const q = (await game.session(undefined)).player;
+    for (let i = 0; i < 6; i++) d = await clues.giveUp(q.id, i, T0);
+    expect(d.clues[2]).toMatchObject({ done: true, solved: false, points: 0, answer: `${L}msterdam` });
+    expect(d.theme.unlocked).toBe(true);
     expect(checkTheme('spaceships', set.themeAccept)).toBe(false);
   });
 });
