@@ -1,0 +1,28 @@
+{
+  "name": "@letterday/server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/server/src/index.js",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.5.17",
+    "@hono/node-server": "^2.1.9",
+    "@resvg/resvg-js": "^2.6.2",
+    "hono": "^4.13.19",
+    "pg": "^8.23.1",
+    "ws": "^8.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/pg": "^8.23.1",
+    "@types/ws": "^8.18.2",
+    "tsx": "^4.23.15",
+    "typescript": "~5.9",
+    "vitest": "^5.1.1"
+  }
+}

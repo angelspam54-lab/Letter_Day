@@ -1,0 +1,454 @@
+acrobatics
+all fours
+anagrams
+angling
+aquatics
+archery
+association football
+athletic game
+athletics
+auction
+auction bridge
+auction pitch
+auto racing
+baccarat
+backgammon
+badminton
+bagatelle
+bait casting
+ball
+ball game
+ballgame
+banking game
+bar billiards
+baseball
+baseball game
+basket rummy
+basketball
+basketball game
+bathe
+battledore
+battledore and shuttlecock
+battue
+beagling
+beano
+beggar-my-neighbor
+beggar-my-neighbour
+belly flop
+belly flopper
+belly whop
+belly whopper
+bezique
+bicycling
+billiards
+bingo
+blackjack
+blindman's bluff
+blindman's buff
+blood sport
+board game
+boat racing
+bobsledding
+bocce
+bocci
+boccie
+bolivia
+boodle
+bopeep
+bowling
+bowls
+boxing
+bridge
+bridge whist
+broad jump
+bullfighting
+camel racing
+canasta
+candlepin bowling
+candlepins
+canfield
+car racing
+card game
+cards
+casino
+cassino
+cast
+casting
+cat and mouse
+cat and rat
+cat's cradle
+checkers
+chemin de fer
+chess
+chess game
+child's game
+cinch
+cliff diving
+climbing
+clock golf
+cockfighting
+contact sport
+contract
+contract bridge
+coursing
+court game
+court tennis
+crab
+crap game
+crap shooting
+crapette
+craps
+crapshoot
+crib
+cribbage
+cricket
+croquet
+cross-country jumping
+cross-country riding
+cross-country skiing
+curling
+curvet
+cycling
+daisy cutter
+darts
+day game
+dead-man's float
+deck tennis
+deer hunt
+deer hunting
+dip
+dive
+diving
+dominoes
+dominos
+double Dutch
+doubles
+draughts
+draw
+draw poker
+drawing
+dressage
+duck hunting
+ducking
+duckpins
+dummy whist
+dune cycling
+ecarte
+equestrian sport
+equitation
+euchre
+fan tan
+fantan
+faro
+fencing
+field game
+field hockey
+field sport
+fight
+figure skating
+fishing
+fisticuffs
+five hundred
+five-hitter
+fives
+flip
+floating
+fly casting
+fly-fishing
+flying mare
+football
+football game
+formula one
+four-card monte
+four-hitter
+fox hunting
+foxhunt
+full gainer
+funambulism
+gainer
+gambling game
+game
+game of chance
+gin
+gin rummy
+go
+go game
+going to Jerusalem
+golf
+golf game
+grappling
+greyhound racing
+gymnastic exercise
+gymnastics
+half gainer
+halma
+handball
+hardball
+hearts
+hide-and-seek
+high jump
+high-low
+high-low-jack
+hockey
+hockey game
+hoops
+hopscotch
+horse racing
+horseback riding
+horseshoes
+hunt
+hunting
+hurling
+hydroplane racing
+ice hockey
+ice skating
+in-fighting
+jackknife
+jacks
+jackstones
+jackstraws
+jai alai
+judo
+jump rope
+jumping
+karate
+karting
+kayaking
+keno
+kickboxing
+kitesurfing
+klondike
+knock rummy
+knucklebones
+kung fu
+lacrosse
+lawn bowling
+lawn tennis
+leapfrog
+long jump
+long whist
+lottery
+lotto
+lucky dip
+ludo
+luging
+mahjong
+marathon
+marbles
+match play
+medal play
+meld
+miniature golf
+monte
+motor racing
+motorcycling
+mumble-the-peg
+mumblety-peg
+musical chairs
+nap
+natation
+netball
+night game
+nim
+ninepins
+no-hit game
+no-hitter
+no-trump
+noughts and crosses
+numbers
+numbers game
+numbers pool
+numbers racket
+old maid
+old sledge
+one-hitter
+outdoor game
+outdoor sport
+overcast
+pachisi
+paintball
+pall-mall
+pallone
+parchesi
+parchisi
+parliament
+parlor game
+parlour game
+patience
+peekaboo
+pelota
+penny ante
+penny ante poker
+penuchle
+perfect game
+piaffe
+pigsticking
+pillow fight
+ping pong
+pinochle
+pinocle
+piquet
+pisha paysha
+pitch
+plunge
+pocket billiards
+poker
+poker game
+polo
+pony-trekking
+pool
+post office
+professional baseball
+professional basketball
+professional boxing
+professional football
+professional golf
+professional tennis
+professional wrestling
+prone float
+pugilism
+pushball
+quoits
+racing
+racquetball
+raffle
+rassling
+real tennis
+riding
+rock climbing
+roller skating
+rollerblading
+rope-a-dope
+rouge et noir
+roulette
+round
+round of golf
+rounders
+row
+rowing
+royal casino
+royal tennis
+rugby
+rugby football
+rugger
+rum
+rummy
+running
+sailing
+samba
+scuba diving
+sculling
+seven-up
+sevens
+shinney
+shinny
+shogi
+short whist
+shove-ha'penny
+shove-halfpenny
+shovel board
+shovelboard
+showjumping
+shuffleboard
+singles
+skateboarding
+skating
+ski jumping
+skiing
+skin diving
+skin-dive
+skinny-dip
+skittles
+sledding
+snakes and ladders
+snooker
+snorkel diving
+snorkeling
+snowboarding
+soccer
+softball
+softball game
+solitaire
+spade casino
+spar
+sparring
+spectator sport
+speed skating
+spillikins
+spin the bottle
+spin the plate
+spin the platter
+sport
+sportfishing
+squash
+squash rackets
+squash racquets
+stadium jumping
+steal
+stickball
+stickball game
+stops
+straight poker
+strip poker
+strip-Jack-naked
+stroke play
+stud
+stud poker
+sumo
+surf casting
+surf fishing
+surfboarding
+surfing
+surfriding
+swallow dive
+swan dive
+sweepstakes
+swim
+swimming
+table game
+table tennis
+taekwondo
+tag
+tauromachy
+team sport
+tennis
+tenpin bowling
+tenpins
+tetherball
+thoroughbred racing
+three-card monte
+three-day event
+three-hitter
+tic-tac-toe
+tick-tack-toe
+ticktacktoe
+ticktacktoo
+tiddlywinks
+tightrope walking
+tit-tat-toe
+tobogganing
+tombola
+touch football
+track
+track and field
+trente-et-quarante
+triathlon
+troll
+trolling
+tumbling
+twenty-one
+two-hitter
+ultimate frisbee
+vaulting
+vingt-et-un
+volleyball
+volleyball game
+water polo
+water sport
+water-skiing
+weightlifting
+whist
+word game
+wrestling
+yoga
+zero-sum game

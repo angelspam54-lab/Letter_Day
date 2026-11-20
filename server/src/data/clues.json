@@ -1,0 +1,3186 @@
+[
+ {
+  "id": "A1",
+  "letter": "A",
+  "theme": "USA",
+  "themeAccept": [
+   "usa",
+   "america",
+   "american",
+   "united states",
+   "the states"
+  ],
+  "themeHint": "Think stars and stripes.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 1,
+    "clue": "American astronaut who took 'one small step' onto the Moon in 1969.",
+    "answer": "Armstrong",
+    "accept": [],
+    "fact": "Neil Armstrong was a US Navy pilot before he became an astronaut."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 2,
+    "clue": "Large reptile with a broad snout that lurks in Florida swamps.",
+    "answer": "Alligator",
+    "accept": [],
+    "fact": "The American alligator is the official state reptile of Florida."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 1,
+    "clue": "The largest US state, bought from Russia in 1867.",
+    "answer": "Alaska",
+    "accept": [],
+    "fact": "Alaska is the largest US state by area, more than twice the size of Texas."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 2,
+    "clue": "Invention the Wright brothers first flew at Kitty Hawk in 1903.",
+    "answer": "Airplane",
+    "accept": [
+     "aeroplane",
+     "aircraft",
+     "airplanes"
+    ],
+    "fact": "The Wright brothers' first powered flight in 1903 lasted only about 12 seconds."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 3,
+    "clue": "Dessert in the saying 'as American as...': a pastry crust filled with sliced orchard fruit.",
+    "answer": "Apple pie",
+    "accept": [
+     "apple pies"
+    ],
+    "fact": "Apple pie recipes were written down in England centuries before the United States existed."
+   },
+   {
+    "category": "wildcard",
+    "label": "Award",
+    "difficulty": 3,
+    "clue": "Hollywood's top film prize, a golden statuette better known as the Oscar.",
+    "answer": "Academy Award",
+    "accept": [
+     "academy awards"
+    ],
+    "fact": "The first Academy Awards ceremony was held in 1929."
+   }
+  ]
+ },
+ {
+  "id": "A2",
+  "letter": "A",
+  "theme": "The Sea",
+  "themeAccept": [
+   "sea",
+   "ocean",
+   "the sea",
+   "the ocean",
+   "seaside",
+   "marine"
+  ],
+  "themeHint": "Waves, salt water and ships.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 2,
+    "clue": "Disney's red-haired mermaid who trades her voice for a pair of legs.",
+    "answer": "Ariel",
+    "accept": [],
+    "fact": "The Little Mermaid is based on a fairy tale by Danish author Hans Christian Andersen."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 3,
+    "clue": "Huge seabird with the longest wingspan of any bird, gliding over oceans for days.",
+    "answer": "Albatross",
+    "accept": [],
+    "fact": "The wandering albatross has the largest wingspan of any living bird, over 3 metres."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 1,
+    "clue": "Ocean whose waves roll onto Lagos beaches, and the beaches of Brazil on the other side.",
+    "answer": "Atlantic",
+    "accept": [
+     "atlantic ocean"
+    ],
+    "fact": "The Atlantic is the second-largest ocean on Earth, after the Pacific."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 1,
+    "clue": "Heavy hooked object dropped overboard to stop a ship drifting.",
+    "answer": "Anchor",
+    "accept": [],
+    "fact": "The earliest anchors were simply heavy stones tied to a rope."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 2,
+    "clue": "Tiny, very salty fish often laid on top of pizzas.",
+    "answer": "Anchovy",
+    "accept": [
+     "anchovies"
+    ],
+    "fact": "Anchovies are small fish that swim in huge schools."
+   },
+   {
+    "category": "wildcard",
+    "label": "Job",
+    "difficulty": 3,
+    "clue": "Top-ranking naval officer who commands a whole fleet.",
+    "answer": "Admiral",
+    "accept": [],
+    "fact": "Horatio Nelson was a British admiral famous for winning the Battle of Trafalgar in 1805."
+   }
+  ]
+ },
+ {
+  "id": "B1",
+  "letter": "B",
+  "theme": "Britain",
+  "themeAccept": [
+   "britain",
+   "british",
+   "uk",
+   "united kingdom",
+   "england",
+   "london",
+   "great britain"
+  ],
+  "themeHint": "Tea, rain and red phone boxes.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 1,
+    "clue": "England football star who married a Spice Girl.",
+    "answer": "Beckham",
+    "accept": [],
+    "fact": "David Beckham played for Manchester United, Real Madrid and LA Galaxy, among others."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 3,
+    "clue": "Stocky, wrinkly dog seen as a symbol of British toughness.",
+    "answer": "Bulldog",
+    "accept": [
+     "bulldogs"
+    ],
+    "fact": "Bulldogs were originally bred in England for the cruel sport of bull-baiting."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 1,
+    "clue": "Famous bell in the clock tower beside the Houses of Parliament in London.",
+    "answer": "Big Ben",
+    "accept": [
+     "bigben"
+    ],
+    "fact": "Big Ben is officially the name of the great bell; the tower is called the Elizabeth Tower."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 2,
+    "clue": "Red double-decker vehicle that carries passengers around London.",
+    "answer": "Bus",
+    "accept": [
+     "buses"
+    ],
+    "fact": "London's red double-decker buses are a world-famous symbol of the city."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 3,
+    "clue": "Sausages with creamy potato and onion gravy, a classic British pub meal.",
+    "answer": "Bangers and mash",
+    "accept": [
+     "bangers",
+     "bangers & mash",
+     "bangers n mash"
+    ],
+    "fact": "Sausages got the nickname 'bangers' because they can burst with a bang when fried."
+   },
+   {
+    "category": "wildcard",
+    "label": "Music",
+    "difficulty": 2,
+    "clue": "Liverpool band of John, Paul, George and Ringo.",
+    "answer": "Beatles",
+    "accept": [],
+    "fact": "The Beatles are widely regarded as the best-selling music act of all time."
+   }
+  ]
+ },
+ {
+  "id": "B2",
+  "letter": "B",
+  "theme": "India",
+  "themeAccept": [
+   "india",
+   "indian",
+   "things from india"
+  ],
+  "themeHint": "Think of the Taj Mahal's home country.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 3,
+    "clue": "Amitabh ___, Bollywood legend who has starred in hundreds of films.",
+    "answer": "Bachchan",
+    "accept": [],
+    "fact": "Amitabh Bachchan has long hosted the Indian version of 'Who Wants to Be a Millionaire?'."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 2,
+    "clue": "Striped big cat that is the country's national animal.",
+    "answer": "Bengal tiger",
+    "accept": [
+     "bengal"
+    ],
+    "fact": "The Bengal tiger is the national animal of India."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 2,
+    "clue": "Old name of Mumbai, the country's biggest city.",
+    "answer": "Bombay",
+    "accept": [],
+    "fact": "The city officially changed its name from Bombay to Mumbai in 1995."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 3,
+    "clue": "Decorative dot worn on the forehead, between the eyebrows.",
+    "answer": "Bindi",
+    "accept": [
+     "bindis"
+    ],
+    "fact": "A bindi can be a simple red dot or a sparkly stick-on jewel."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 1,
+    "clue": "Fragrant spiced rice dish layered with meat or vegetables.",
+    "answer": "Biryani",
+    "accept": [
+     "biriyani",
+     "briyani",
+     "biriani"
+    ],
+    "fact": "The city of Hyderabad is famous for its own style of this rice dish."
+   },
+   {
+    "category": "wildcard",
+    "label": "Film",
+    "difficulty": 1,
+    "clue": "Nickname of the Hindi-language film industry based in Mumbai.",
+    "answer": "Bollywood",
+    "accept": [],
+    "fact": "India produces more films each year than any other country."
+   }
+  ]
+ },
+ {
+  "id": "C1",
+  "letter": "C",
+  "theme": "Winter",
+  "themeAccept": [
+   "winter",
+   "cold",
+   "snow",
+   "cold weather",
+   "wintertime",
+   "freezing"
+  ],
+  "themeHint": "The coldest season of the year.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 2,
+    "clue": "Santa's surname; he does his busiest work on cold December nights.",
+    "answer": "Claus",
+    "accept": [],
+    "fact": "The name Santa Claus comes from the Dutch Sinterklaas, based on Saint Nicholas."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 3,
+    "clue": "North American name for the reindeer, which survives freezing Arctic winters.",
+    "answer": "Caribou",
+    "accept": [],
+    "fact": "Caribou and reindeer are the same species."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 1,
+    "clue": "Huge snowy country north of the USA with a maple leaf on its flag.",
+    "answer": "Canada",
+    "accept": [],
+    "fact": "Canada has the longest coastline of any country in the world."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 1,
+    "clue": "Warm outer garment you button up before going out into the snow.",
+    "answer": "Coat",
+    "accept": [
+     "coats"
+    ],
+    "fact": "Down coats are filled with the soft under-feathers of ducks or geese."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 2,
+    "clue": "Hot chocolatey drink that warms you up on a frosty day.",
+    "answer": "Cocoa",
+    "accept": [],
+    "fact": "Most of the world's cocoa beans are grown in West Africa, with Ivory Coast and Ghana the biggest producers."
+   },
+   {
+    "category": "wildcard",
+    "label": "Sport",
+    "difficulty": 3,
+    "clue": "Ice sport where players sweep in front of a sliding granite stone.",
+    "answer": "Curling",
+    "accept": [],
+    "fact": "Many curling stones are made from granite quarried on Ailsa Craig, an island off Scotland."
+   }
+  ]
+ },
+ {
+  "id": "C2",
+  "letter": "C",
+  "theme": "The Wild West",
+  "themeAccept": [
+   "wild west",
+   "cowboys",
+   "cowboy",
+   "old west",
+   "western",
+   "westerns"
+  ],
+  "themeHint": "Saloons, sheriffs and tumbleweeds.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 3,
+    "clue": "Famous frontierswoman and sharpshooter, a friend of Wild Bill Hickok.",
+    "answer": "Calamity Jane",
+    "accept": [
+     "calamity"
+    ],
+    "fact": "Calamity Jane's real name was Martha Jane Cannary."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 1,
+    "clue": "Wild dog of the prairies, famous for howling at night.",
+    "answer": "Coyote",
+    "accept": [
+     "coyotes"
+    ],
+    "fact": "Coyotes live across North America, even in big cities."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 2,
+    "clue": "US state where the 1849 Gold Rush drew thousands of prospectors west.",
+    "answer": "California",
+    "accept": [],
+    "fact": "Gold was discovered at Sutter's Mill in California in 1848."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 2,
+    "clue": "Canvas-topped wooden vehicle pulled by oxen or horses across the prairie.",
+    "answer": "Covered wagon",
+    "accept": [
+     "covered wagons",
+     "conestoga"
+    ],
+    "fact": "Covered wagons were nicknamed 'prairie schooners' because their white tops looked like sails."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 3,
+    "clue": "Spicy stew of beef, beans and peppers, cooked by cattle drivers on the trail.",
+    "answer": "Chili",
+    "accept": [
+     "chilli",
+     "chili con carne",
+     "chilli con carne"
+    ],
+    "fact": "Chili con carne is the official state dish of Texas."
+   },
+   {
+    "category": "wildcard",
+    "label": "Job",
+    "difficulty": 1,
+    "clue": "Ranch worker on horseback who herds cattle and wears a wide-brimmed hat.",
+    "answer": "Cowboy",
+    "accept": [
+     "cowboys",
+     "cowhand"
+    ],
+    "fact": "Many of the first American cowboys learned their skills from Mexican vaqueros."
+   }
+  ]
+ },
+ {
+  "id": "D1",
+  "letter": "D",
+  "theme": "Australia",
+  "themeAccept": [
+   "australia",
+   "australian",
+   "down under",
+   "aussie",
+   "oz"
+  ],
+  "themeHint": "Kangaroos hop here.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 2,
+    "clue": "'Crocodile' hero of a 1986 film, played by Paul Hogan.",
+    "answer": "Dundee",
+    "accept": [],
+    "fact": "Crocodile Dundee was one of the most successful Australian films ever made."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 1,
+    "clue": "Wild yellow dog of the Outback.",
+    "answer": "Dingo",
+    "accept": [
+     "dingoes"
+    ],
+    "fact": "Dingoes rarely bark; they communicate mostly by howling."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 2,
+    "clue": "Tropical capital city of the Northern Territory.",
+    "answer": "Darwin",
+    "accept": [],
+    "fact": "The city is named after the naturalist Charles Darwin."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 1,
+    "clue": "Long wooden wind instrument played by Aboriginal people, with a deep droning sound.",
+    "answer": "Didgeridoo",
+    "accept": [
+     "didjeridu",
+     "didgeridu"
+    ],
+    "fact": "Didgeridoos are traditionally made from tree trunks hollowed out by termites."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 3,
+    "clue": "Simple bush bread baked in the hot coals of a campfire.",
+    "answer": "Damper",
+    "accept": [],
+    "fact": "Damper was traditionally made by stockmen with little more than flour, water and salt."
+   },
+   {
+    "category": "wildcard",
+    "label": "Slang",
+    "difficulty": 3,
+    "clue": "Aussie slang for a fool; also a glossy black bird with a forked tail.",
+    "answer": "Drongo",
+    "accept": [],
+    "fact": "Drongos can mimic the alarm calls of other animals, scaring them off to steal their food."
+   }
+  ]
+ },
+ {
+  "id": "D2",
+  "letter": "D",
+  "theme": "Germany",
+  "themeAccept": [
+   "germany",
+   "german",
+   "deutschland",
+   "things from germany"
+  ],
+  "themeHint": "Think Berlin, beer halls and the autobahn.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 2,
+    "clue": "Rudolf ___, German engineer whose surname is now on fuel pumps everywhere.",
+    "answer": "Diesel",
+    "accept": [],
+    "fact": "Rudolf Diesel was born in Paris to German parents."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 2,
+    "clue": "Long, low 'sausage dog' bred to hunt badgers.",
+    "answer": "Dachshund",
+    "accept": [
+     "daschund",
+     "dachshunds",
+     "dachsund"
+    ],
+    "fact": "The name Dachshund means 'badger dog' in German."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 3,
+    "clue": "Saxon city on the River Elbe, famous for its rebuilt Frauenkirche church.",
+    "answer": "Dresden",
+    "accept": [],
+    "fact": "Dresden's Frauenkirche was rebuilt and reopened in 2005, decades after its wartime destruction."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 3,
+    "clue": "Currency used in West Germany, then all of Germany, before the euro arrived.",
+    "answer": "Deutsche Mark",
+    "accept": [
+     "deutschmark",
+     "deutsche marks",
+     "d-mark",
+     "dmark",
+     "deutsch mark"
+    ],
+    "fact": "Deutsche Mark notes and coins were replaced by the euro in 2002."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 1,
+    "clue": "Spit-roasted meat in flatbread, a favourite late-night street food in Berlin.",
+    "answer": "Doner kebab",
+    "accept": [
+     "doner",
+     "donner kebab",
+     "donner"
+    ],
+    "fact": "The doner kebab sandwich became hugely popular in Berlin thanks to Turkish immigrants."
+   },
+   {
+    "category": "wildcard",
+    "label": "Language",
+    "difficulty": 1,
+    "clue": "What the locals call their own language.",
+    "answer": "Deutsch",
+    "accept": [],
+    "fact": "German is the most widely spoken native language in the European Union."
+   }
+  ]
+ },
+ {
+  "id": "E1",
+  "letter": "E",
+  "theme": "Royalty",
+  "themeAccept": [
+   "royalty",
+   "royal",
+   "royals",
+   "kings and queens",
+   "monarchy",
+   "royal family"
+  ],
+  "themeHint": "Crowns, thrones and palaces.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 1,
+    "clue": "British queen who reigned for 70 years until 2022.",
+    "answer": "Elizabeth",
+    "accept": [
+     "elizabeth ii",
+     "elizabeth the second"
+    ],
+    "fact": "Queen Elizabeth II was the longest-reigning British monarch in history."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 2,
+    "clue": "Largest of the flightless tuxedo-wearing birds of Antarctica, named after a royal title.",
+    "answer": "Emperor penguin",
+    "accept": [
+     "emperor",
+     "emperor penguins"
+    ],
+    "fact": "Male emperor penguins keep their eggs warm on their feet through the Antarctic winter."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 2,
+    "clue": "Scottish capital with a famous castle and the royal Palace of Holyroodhouse.",
+    "answer": "Edinburgh",
+    "accept": [],
+    "fact": "The Palace of Holyroodhouse is the monarch's official residence in Scotland."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 3,
+    "clue": "White fur with black tips used to trim royal robes and crowns.",
+    "answer": "Ermine",
+    "accept": [],
+    "fact": "Ermine is the white winter coat of the stoat."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 3,
+    "clue": "Bergamot-flavoured black tea named after a British nobleman.",
+    "answer": "Earl Grey",
+    "accept": [
+     "earl grey tea"
+    ],
+    "fact": "Earl Grey tea gets its flavour from oil of the bergamot orange."
+   },
+   {
+    "category": "wildcard",
+    "label": "Title",
+    "difficulty": 1,
+    "clue": "Female ruler of an empire.",
+    "answer": "Empress",
+    "accept": [],
+    "fact": "Queen Victoria was also given the title Empress of India."
+   }
+  ]
+ },
+ {
+  "id": "E2",
+  "letter": "E",
+  "theme": "Birds",
+  "themeAccept": [
+   "birds",
+   "bird",
+   "feathers",
+   "feathered"
+  ],
+  "themeHint": "Feathers, beaks and wings.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 3,
+    "clue": "'The Eagle', the British ski jumper who charmed the 1988 Winter Olympics.",
+    "answer": "Eddie",
+    "accept": [
+     "eddie the eagle",
+     "eddie edwards"
+    ],
+    "fact": "Eddie 'the Eagle' Edwards finished last at the Calgary Olympics but became a crowd favourite."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 1,
+    "clue": "Tall Australian bird that cannot fly.",
+    "answer": "Emu",
+    "accept": [
+     "emus"
+    ],
+    "fact": "The emu is the second-tallest bird in the world after the ostrich."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 3,
+    "clue": "Florida wetland famous for its herons, egrets and alligators.",
+    "answer": "Everglades",
+    "accept": [],
+    "fact": "Everglades National Park was established in 1947."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 2,
+    "clue": "Quilt originally stuffed with the soft down of a northern sea duck.",
+    "answer": "Eiderdown",
+    "accept": [
+     "eider down"
+    ],
+    "fact": "Eider ducks line their nests with their own soft down, which is collected for bedding."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 1,
+    "clue": "Laid by hens and eaten boiled, fried or scrambled.",
+    "answer": "Eggs",
+    "accept": [
+     "egg"
+    ],
+    "fact": "A hen's egg can have a white or brown shell depending on the breed of hen."
+   },
+   {
+    "category": "wildcard",
+    "label": "Sport",
+    "difficulty": 2,
+    "clue": "Nigeria's national football team are the Super ___.",
+    "answer": "Eagles",
+    "accept": [],
+    "fact": "The Super Eagles have won the Africa Cup of Nations three times: 1980, 1994 and 2013."
+   }
+  ]
+ },
+ {
+  "id": "F1",
+  "letter": "F",
+  "theme": "Fire",
+  "themeAccept": [
+   "fire",
+   "fires",
+   "flame",
+   "flames",
+   "burning",
+   "blaze"
+  ],
+  "themeHint": "Hot, bright and needs oxygen.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 2,
+    "clue": "Guy ___, whose failed 1605 plot is remembered with bonfires each November.",
+    "answer": "Fawkes",
+    "accept": [],
+    "fact": "Bonfire Night on 5 November marks the failed Gunpowder Plot of 1605."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 1,
+    "clue": "Flying beetle whose tail glows in the dark on summer nights.",
+    "answer": "Firefly",
+    "accept": [
+     "fireflies"
+    ],
+    "fact": "Fireflies make light through a chemical reaction called bioluminescence."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 2,
+    "clue": "Japan's tallest mountain, a snow-capped volcano.",
+    "answer": "Fuji",
+    "accept": [
+     "fujiyama",
+     "fujisan",
+     "fuji san"
+    ],
+    "fact": "Mount Fuji last erupted in 1707."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 3,
+    "clue": "Hard stone struck against steel to make sparks.",
+    "answer": "Flint",
+    "accept": [],
+    "fact": "Early humans used this stone both to make sharp tools and to start fires."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 3,
+    "clue": "Cooking style where brandy is poured over a dish and set alight at the table.",
+    "answer": "Flambe",
+    "accept": [
+     "flambee",
+     "flambeed",
+     "flambes"
+    ],
+    "fact": "Crepes Suzette is a French dessert famously set alight before serving."
+   },
+   {
+    "category": "wildcard",
+    "label": "Job",
+    "difficulty": 1,
+    "clue": "Brave worker who sprays water on blazes and rescues people.",
+    "answer": "Firefighter",
+    "accept": [
+     "fireman",
+     "firefighters",
+     "fire fighter",
+     "firemen"
+    ],
+    "fact": "Ancient Rome had organised firefighting teams called the Vigiles."
+   }
+  ]
+ },
+ {
+  "id": "F2",
+  "letter": "F",
+  "theme": "Speed",
+  "themeAccept": [
+   "speed",
+   "fast",
+   "fast things",
+   "speedy",
+   "quick",
+   "racing"
+  ],
+  "themeHint": "Think of things that go very, very quickly.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 2,
+    "clue": "Enzo ___, Italian founder of a famous red racing-car company.",
+    "answer": "Ferrari",
+    "accept": [],
+    "fact": "The company's logo shows a black prancing horse."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 2,
+    "clue": "Bird of prey; its peregrine kind is the fastest animal on Earth when diving.",
+    "answer": "Falcon",
+    "accept": [
+     "falcons"
+    ],
+    "fact": "A diving peregrine falcon can reach speeds of over 300 km/h."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 3,
+    "clue": "Nordic country whose quick rally and racing drivers are nicknamed 'Flying' after its people.",
+    "answer": "Finland",
+    "accept": [],
+    "fact": "Finland has produced several F1 world champions, including Mika Hakkinen and Kimi Raikkonen."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 3,
+    "clue": "Supersonic military aircraft built for air combat.",
+    "answer": "Fighter jet",
+    "accept": [
+     "fighter",
+     "fighter plane",
+     "fighter jets"
+    ],
+    "fact": "Many modern combat aircraft can fly faster than the speed of sound."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 1,
+    "clue": "Burgers and fries served in minutes at a drive-through.",
+    "answer": "Fast food",
+    "accept": [],
+    "fact": "The first McDonald's restaurant opened in California in 1940."
+   },
+   {
+    "category": "wildcard",
+    "label": "Sport",
+    "difficulty": 1,
+    "clue": "Top motor-racing series with Grand Prix races around the world.",
+    "answer": "Formula One",
+    "accept": [
+     "formula 1",
+     "f1"
+    ],
+    "fact": "The first Formula One World Championship race was held at Silverstone in 1950."
+   }
+  ]
+ },
+ {
+  "id": "G1",
+  "letter": "G",
+  "theme": "Gold",
+  "themeAccept": [
+   "gold",
+   "golden",
+   "things that are gold"
+  ],
+  "themeHint": "Precious, shiny and yellow.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 2,
+    "clue": "Fairy-tale girl who tasted the three bears' porridge.",
+    "answer": "Goldilocks",
+    "accept": [],
+    "fact": "In early versions of the story, the intruder was an old woman, not a little girl."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 1,
+    "clue": "Orange pet fish often kept in a round bowl.",
+    "answer": "Goldfish",
+    "accept": [
+     "goldfishes"
+    ],
+    "fact": "Goldfish were first domesticated in China over a thousand years ago."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 2,
+    "clue": "West African country once called the Gold Coast.",
+    "answer": "Ghana",
+    "accept": [],
+    "fact": "In 1957 Ghana became one of the first sub-Saharan African countries to gain independence."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 1,
+    "clue": "Shiny brick of precious metal stored in bank vaults.",
+    "answer": "Gold bar",
+    "accept": [
+     "gold bars",
+     "gold bullion",
+     "gold ingot"
+    ],
+    "fact": "A standard gold bar held by central banks weighs about 12.4 kg (400 troy ounces)."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 3,
+    "clue": "Sweet amber pancake topping sold in a green tin with a lion on it.",
+    "answer": "Golden syrup",
+    "accept": [],
+    "fact": "The Lyle's Golden Syrup tin is recognised by Guinness as the world's oldest unchanged brand packaging."
+   },
+   {
+    "category": "wildcard",
+    "label": "Film",
+    "difficulty": 3,
+    "clue": "1964 James Bond film whose villain is obsessed with a precious yellow metal.",
+    "answer": "Goldfinger",
+    "accept": [],
+    "fact": "In Goldfinger, a woman is famously found painted all over in gold."
+   }
+  ]
+ },
+ {
+  "id": "G2",
+  "letter": "G",
+  "theme": "Christmas",
+  "themeAccept": [
+   "christmas",
+   "xmas",
+   "festive season",
+   "the holidays",
+   "festive"
+  ],
+  "themeHint": "25 December.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 2,
+    "clue": "Grumpy green Dr. Seuss character who tried to steal a holiday.",
+    "answer": "Grinch",
+    "accept": [],
+    "fact": "Dr. Seuss published 'How the Grinch Stole Christmas!' in 1957."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 2,
+    "clue": "Bird roasted for the Cratchit family's festive dinner in A Christmas Carol.",
+    "answer": "Goose",
+    "accept": [
+     "geese"
+    ],
+    "fact": "Roast goose was a traditional Christmas dinner in Britain before turkey became popular."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 3,
+    "clue": "Santa's cave-like den where children visit him in shops.",
+    "answer": "Grotto",
+    "accept": [],
+    "fact": "Santa's grottos in department stores became popular in Britain in the late 1800s."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 1,
+    "clue": "Wrapped item placed under the tree for someone you love.",
+    "answer": "Gift",
+    "accept": [
+     "gifts"
+    ],
+    "fact": "Giving gifts at midwinter dates back to Roman festivals such as Saturnalia."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 1,
+    "clue": "Spiced biscuit dough used to build little decorated houses and men.",
+    "answer": "Gingerbread",
+    "accept": [
+     "gingerbread man",
+     "gingerbread house"
+    ],
+    "fact": "Gingerbread is flavoured with ginger and often sweetened with molasses or honey."
+   },
+   {
+    "category": "wildcard",
+    "label": "Decoration",
+    "difficulty": 3,
+    "clue": "Rope of tinsel or greenery hung around the tree or over a doorway.",
+    "answer": "Garland",
+    "accept": [
+     "garlands"
+    ],
+    "fact": "Evergreen garlands were used in midwinter celebrations long before Christmas trees."
+   }
+  ]
+ },
+ {
+  "id": "H1",
+  "letter": "H",
+  "theme": "Greek Mythology",
+  "themeAccept": [
+   "greek mythology",
+   "greek myths",
+   "greek myth",
+   "greek gods",
+   "mythology",
+   "ancient greece",
+   "greek legends"
+  ],
+  "themeHint": "Think of the gods on Mount Olympus.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 1,
+    "clue": "Super-strong hero, son of Zeus, who completed twelve impossible labours.",
+    "answer": "Hercules",
+    "accept": [
+     "heracles",
+     "herakles"
+    ],
+    "fact": "The Greeks called him Heracles; Hercules is the Roman version of his name."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 1,
+    "clue": "Pegasus was a winged one of these.",
+    "answer": "Horse",
+    "accept": [],
+    "fact": "In myth, Pegasus sprang from Medusa's neck when Perseus cut off her head."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 2,
+    "clue": "Gloomy underworld of the dead, named after the god who ruled it.",
+    "answer": "Hades",
+    "accept": [],
+    "fact": "Its gates were guarded by Cerberus, a monstrous three-headed dog."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 3,
+    "clue": "Hades owned one that made its wearer invisible; Perseus borrowed it to face Medusa.",
+    "answer": "Helmet",
+    "accept": [
+     "helm"
+    ],
+    "fact": "Ancient Greek hoplite soldiers often wore a bronze Corinthian-style one that covered most of the face."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 2,
+    "clue": "Myth says bees fed baby Zeus this sweet golden food in a cave on Crete.",
+    "answer": "Honey",
+    "accept": [],
+    "fact": "Bees make it from flower nectar, and stored properly it can keep for an extremely long time."
+   },
+   {
+    "category": "wildcard",
+    "label": "Monster",
+    "difficulty": 3,
+    "clue": "Many-headed serpent: cut off one head and two more grew back.",
+    "answer": "Hydra",
+    "accept": [],
+    "fact": "Hercules killed it as his second labour, with help from his nephew Iolaus."
+   }
+  ]
+ },
+ {
+  "id": "H2",
+  "letter": "H",
+  "theme": "The Farm",
+  "themeAccept": [
+   "farm",
+   "the farm",
+   "farming",
+   "farms",
+   "farmyard",
+   "agriculture"
+  ],
+  "themeHint": "Old MacDonald had one.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 3,
+    "clue": "Swiss storybook girl who goes to live with her grandfather and his goats in the Alps.",
+    "answer": "Heidi",
+    "accept": [],
+    "fact": "The novel was written by Johanna Spyri and published in the early 1880s."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 1,
+    "clue": "Female chicken that lays your breakfast eggs.",
+    "answer": "Hen",
+    "accept": [
+     "hens"
+    ],
+    "fact": "A hen can lay eggs without a rooster, but those eggs will never hatch into chicks."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 3,
+    "clue": "Upper floor of a barn where bales of dried grass are stored.",
+    "answer": "Hayloft",
+    "accept": [
+     "hay loft"
+    ],
+    "fact": "Hay must be dried well before storing, as damp hay can heat up and even catch fire."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 2,
+    "clue": "Long-handled tool for chopping weeds and loosening the soil.",
+    "answer": "Hoe",
+    "accept": [],
+    "fact": "It is one of the oldest farming tools, used in ancient Egypt and Mesopotamia."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 2,
+    "clue": "Cured meat from a pig's back leg, often sliced into sandwiches.",
+    "answer": "Ham",
+    "accept": [],
+    "fact": "Parma ham from Italy is salted and air-dried for many months."
+   },
+   {
+    "category": "wildcard",
+    "label": "Season",
+    "difficulty": 1,
+    "clue": "Busy time when farmers gather in their ripe crops.",
+    "answer": "Harvest",
+    "accept": [
+     "harvest time"
+    ],
+    "fact": "The full moon nearest the autumn equinox is called the Harvest Moon."
+   }
+  ]
+ },
+ {
+  "id": "I1",
+  "letter": "I",
+  "theme": "Rainbow Colours",
+  "themeAccept": [
+   "rainbow colours",
+   "rainbow colors",
+   "rainbow",
+   "the rainbow",
+   "colours of the rainbow",
+   "colours",
+   "colors"
+  ],
+  "themeHint": "Look up after a shower on a sunny day.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 3,
+    "clue": "Greek goddess of the rainbow and messenger of the gods.",
+    "answer": "Iris",
+    "accept": [],
+    "fact": "The coloured part of the eye is named after her."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 3,
+    "clue": "Wading bird with a long curved bill; the scarlet kind is bright red.",
+    "answer": "Ibis",
+    "accept": [
+     "ibises"
+    ],
+    "fact": "The scarlet ibis is the national bird of Trinidad and Tobago."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 2,
+    "clue": "The 'Emerald Isle', famous for its rolling green fields.",
+    "answer": "Ireland",
+    "accept": [],
+    "fact": "Its national day, St Patrick's Day, is celebrated on 17 March."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 2,
+    "clue": "Pens and printers are filled with this, in black, blue, red and many other colours.",
+    "answer": "Ink",
+    "accept": [
+     "inks"
+    ],
+    "fact": "Colour printers mix cyan, magenta and yellow to make most other colours."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 1,
+    "clue": "Sweet coloured coating swirled on top of cupcakes and birthday cakes.",
+    "answer": "Icing",
+    "accept": [],
+    "fact": "Royal icing, made with egg whites, sets hard and is often used on wedding cakes."
+   },
+   {
+    "category": "wildcard",
+    "label": "Colour",
+    "difficulty": 1,
+    "clue": "Deep blue-violet shade that sits between blue and violet in the rainbow.",
+    "answer": "Indigo",
+    "accept": [],
+    "fact": "The dye was traditionally made from plants of the Indigofera family."
+   }
+  ]
+ },
+ {
+  "id": "I2",
+  "letter": "I",
+  "theme": "Summer",
+  "themeAccept": [
+   "summer",
+   "summertime",
+   "hot weather",
+   "sunshine",
+   "the sun",
+   "heat",
+   "summer holiday"
+  ],
+  "themeHint": "The hottest season of the year.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 2,
+    "clue": "In Greek myth he flew too close to the sun and his wax wings melted.",
+    "answer": "Icarus",
+    "accept": [],
+    "fact": "His wings were made by his father, Daedalus, so they could escape from Crete."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 2,
+    "clue": "Big lizard that basks in the sunshine to warm its cold-blooded body.",
+    "answer": "Iguana",
+    "accept": [
+     "iguanas"
+    ],
+    "fact": "Galapagos marine iguanas are the only lizards that swim and feed in the sea."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 1,
+    "clue": "Spanish Mediterranean island famous for beaches and summer parties.",
+    "answer": "Ibiza",
+    "accept": [],
+    "fact": "It is one of the Balearic Islands, along with Majorca and Menorca."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 3,
+    "clue": "Blow-up ring, lilo or flamingo you float on in the pool.",
+    "answer": "Inflatable",
+    "accept": [
+     "inflatables",
+     "inflatable ring"
+    ],
+    "fact": "Inflatable lifejackets can fill in seconds using a small gas cartridge."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 1,
+    "clue": "Frozen dessert that drips down your cone on a hot day.",
+    "answer": "Ice cream",
+    "accept": [
+     "icecream",
+     "ice-cream",
+     "ice lolly"
+    ],
+    "fact": "Italian gelato is usually denser than other versions because less air is whipped in."
+   },
+   {
+    "category": "wildcard",
+    "label": "Drink",
+    "difficulty": 3,
+    "clue": "Chilled version of a classic hot brew, often served with lemon.",
+    "answer": "Iced tea",
+    "accept": [
+     "ice tea"
+    ],
+    "fact": "Sweet tea served cold is a famous tradition in the southern United States."
+   }
+  ]
+ },
+ {
+  "id": "J1",
+  "letter": "J",
+  "theme": "The Jungle",
+  "themeAccept": [
+   "jungle",
+   "the jungle",
+   "rainforest",
+   "rain forest",
+   "tropical forest",
+   "rainforests"
+  ],
+  "themeHint": "Hot, green and full of vines.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 2,
+    "clue": "Tarzan's sweetheart, who joins him swinging through the trees.",
+    "answer": "Jane",
+    "accept": [
+     "jane porter"
+    ],
+    "fact": "Tarzan was created by author Edgar Rice Burroughs in 1912."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 1,
+    "clue": "Biggest wild cat of the Americas, covered in rosettes and prowling the rainforest.",
+    "answer": "Jaguar",
+    "accept": [
+     "jaguars"
+    ],
+    "fact": "It has one of the strongest bites of any big cat, strong enough to pierce turtle shells."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 3,
+    "clue": "Indonesian island of volcanoes and rainforest whose name is also slang for coffee.",
+    "answer": "Java",
+    "accept": [],
+    "fact": "It is the only home of the critically endangered Javan rhinoceros."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 3,
+    "clue": "Rugged four-wheel-drive vehicle first built for soldiers, great on muddy tracks.",
+    "answer": "Jeep",
+    "accept": [],
+    "fact": "The original was developed for the US Army during the Second World War."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 2,
+    "clue": "Huge spiky tropical crop, sometimes cooked as a vegan pulled-meat substitute.",
+    "answer": "Jackfruit",
+    "accept": [],
+    "fact": "It is the national fruit of Bangladesh."
+   },
+   {
+    "category": "wildcard",
+    "label": "Film",
+    "difficulty": 1,
+    "clue": "Film where a magical board game unleashes a stampeding wilderness into a town.",
+    "answer": "Jumanji",
+    "accept": [],
+    "fact": "The 1995 original starred Robin Williams."
+   }
+  ]
+ },
+ {
+  "id": "J2",
+  "letter": "J",
+  "theme": "Pirates",
+  "themeAccept": [
+   "pirates",
+   "pirate",
+   "piracy",
+   "buccaneers",
+   "pirate ships"
+  ],
+  "themeHint": "Yo ho ho!",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 1,
+    "clue": "Captain ___ Sparrow, the swaggering pirate played by Johnny Depp.",
+    "answer": "Jack",
+    "accept": [
+     "jack sparrow"
+    ],
+    "fact": "Pirates of the Caribbean was inspired by a Disneyland theme-park ride."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 3,
+    "clue": "Small grey-necked crow with a reputation for snatching shiny things.",
+    "answer": "Jackdaw",
+    "accept": [
+     "jackdaws"
+    ],
+    "fact": "Jackdaws often nest in chimneys and holes in old buildings."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 2,
+    "clue": "Caribbean island whose Port Royal was once a notorious pirate haven.",
+    "answer": "Jamaica",
+    "accept": [],
+    "fact": "Much of Port Royal sank into the sea during an earthquake in 1692."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 1,
+    "clue": "Black flag with a white skull and crossbones.",
+    "answer": "Jolly Roger",
+    "accept": [
+     "jolly rodger"
+    ],
+    "fact": "Different pirate captains flew their own versions of it with different designs."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 3,
+    "clue": "Strips of dried, salted meat that keep for ages on long voyages.",
+    "answer": "Jerky",
+    "accept": [
+     "jerkey"
+    ],
+    "fact": "The word comes from 'charqui', a Quechua word from South America."
+   },
+   {
+    "category": "wildcard",
+    "label": "Treasure",
+    "difficulty": 2,
+    "clue": "Rubies, emeralds and diamonds heaped inside a buried chest.",
+    "answer": "Jewels",
+    "accept": [
+     "jewel",
+     "jewellery",
+     "jewelry",
+     "jewelery"
+    ],
+    "fact": "The British Crown Jewels are kept in the Tower of London."
+   }
+  ]
+ },
+ {
+  "id": "K1",
+  "letter": "K",
+  "theme": "Japan",
+  "themeAccept": [
+   "japan",
+   "japanese",
+   "things from japan",
+   "tokyo"
+  ],
+  "themeHint": "Land of the rising sun.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 3,
+    "clue": "Legendary film director of Seven Samurai and Rashomon.",
+    "answer": "Kurosawa",
+    "accept": [],
+    "fact": "His Seven Samurai inspired the Hollywood Western The Magnificent Seven."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 2,
+    "clue": "Colourful carp kept in ornamental garden ponds.",
+    "answer": "Koi",
+    "accept": [
+     "koi carp"
+    ],
+    "fact": "Some prize-winning ones have sold for more than a million US dollars."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 2,
+    "clue": "Former imperial capital, famous for temples, geishas and the Golden Pavilion.",
+    "answer": "Kyoto",
+    "accept": [],
+    "fact": "It was the home of the emperor for over a thousand years, until 1869."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 1,
+    "clue": "Traditional long robe with wide sleeves, tied with an obi sash.",
+    "answer": "Kimono",
+    "accept": [
+     "kimonos"
+    ],
+    "fact": "The word literally means 'thing to wear'."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 3,
+    "clue": "Famously tender, marbled Wagyu meat named after a port city.",
+    "answer": "Kobe beef",
+    "accept": [
+     "kobe"
+    ],
+    "fact": "To carry the name, it must come from Tajima cattle raised in Hyogo Prefecture."
+   },
+   {
+    "category": "wildcard",
+    "label": "Martial Art",
+    "difficulty": 1,
+    "clue": "Martial art of kicks, punches and coloured belts; its name means 'empty hand'.",
+    "answer": "Karate",
+    "accept": [],
+    "fact": "It developed on Okinawa and made its Olympic debut at the Tokyo 2020 Games."
+   }
+  ]
+ },
+ {
+  "id": "K2",
+  "letter": "K",
+  "theme": "Green",
+  "themeAccept": [
+   "green",
+   "things that are green",
+   "the colour green",
+   "the color green",
+   "green things"
+  ],
+  "themeHint": "The colour of grass.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 1,
+    "clue": "Banjo-playing frog who sings that it's not easy being green.",
+    "answer": "Kermit",
+    "accept": [
+     "kermit the frog"
+    ],
+    "fact": "He was created by puppeteer Jim Henson in 1955."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 3,
+    "clue": "Chubby green flightless parrot from New Zealand that wanders the forest floor at night.",
+    "answer": "Kakapo",
+    "accept": [],
+    "fact": "It is the world's heaviest parrot."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 3,
+    "clue": "London's famous royal botanic site, with huge Victorian glasshouses.",
+    "answer": "Kew Gardens",
+    "accept": [
+     "kew"
+    ],
+    "fact": "It is a UNESCO World Heritage Site with one of the world's largest collections of living plants."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 2,
+    "clue": "Glowing green rock from Superman's home planet that robs him of his powers.",
+    "answer": "Kryptonite",
+    "accept": [],
+    "fact": "It first appeared in the Superman radio show in 1943."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 2,
+    "clue": "Leafy green cabbage cousin, popular in smoothies and baked into crisps.",
+    "answer": "Kale",
+    "accept": [],
+    "fact": "It belongs to the same plant species as cabbage, broccoli and cauliflower."
+   },
+   {
+    "category": "wildcard",
+    "label": "Fruit",
+    "difficulty": 1,
+    "clue": "Furry brown fruit with bright green flesh and tiny black seeds.",
+    "answer": "Kiwi",
+    "accept": [
+     "kiwifruit",
+     "kiwi fruit",
+     "kiwis"
+    ],
+    "fact": "It was once called the Chinese gooseberry, as it originally came from China."
+   }
+  ]
+ },
+ {
+  "id": "L1",
+  "letter": "L",
+  "theme": "Kitchen",
+  "themeAccept": [
+   "kitchen",
+   "the kitchen",
+   "kitchens",
+   "cooking",
+   "cookery",
+   "things in a kitchen"
+  ],
+  "themeHint": "The room where meals are made.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 3,
+    "clue": "Nigella ___, the British TV cook known for indulgent recipes.",
+    "answer": "Lawson",
+    "accept": [],
+    "fact": "Her first book, How to Eat, came out in 1998."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 2,
+    "clue": "Clawed shellfish that turns bright red when cooked in a pot.",
+    "answer": "Lobster",
+    "accept": [
+     "lobsters"
+    ],
+    "fact": "Live lobsters are usually blue-green or brown; cooking turns their shells red."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 2,
+    "clue": "Cool cupboard or small room where food is stored.",
+    "answer": "Larder",
+    "accept": [],
+    "fact": "The word comes from an old French word linked to lard, as it was where meat and bacon were kept."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 1,
+    "clue": "Deep, long-handled spoon for serving soup.",
+    "answer": "Ladle",
+    "accept": [
+     "ladles"
+    ],
+    "fact": "Steelworks use giant metal ladles to pour molten steel."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 1,
+    "clue": "Baked Italian dish of flat pasta sheets layered with meat sauce and cheese.",
+    "answer": "Lasagne",
+    "accept": [
+     "lasagna"
+    ],
+    "fact": "Garfield the cartoon cat is famously obsessed with it."
+   },
+   {
+    "category": "wildcard",
+    "label": "Appliance",
+    "difficulty": 3,
+    "clue": "Machine with whirling blades that turns fruit into smoothies, also called a blender.",
+    "answer": "Liquidiser",
+    "accept": [
+     "liquidizer"
+    ],
+    "fact": "The electric blender was invented in the United States in the 1920s."
+   }
+  ]
+ },
+ {
+  "id": "L2",
+  "letter": "L",
+  "theme": "The Garden",
+  "themeAccept": [
+   "garden",
+   "the garden",
+   "gardening",
+   "gardens",
+   "backyard",
+   "back garden"
+  ],
+  "themeHint": "Where you'd find a shed and flowerbeds.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 3,
+    "clue": "Swedish scientist who gave plants and animals their two-part Latin names.",
+    "answer": "Linnaeus",
+    "accept": [
+     "linne"
+    ],
+    "fact": "He is often called the father of modern taxonomy."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 1,
+    "clue": "Red spotted beetle that gardeners love because it eats aphids.",
+    "answer": "Ladybird",
+    "accept": [
+     "ladybug",
+     "lady bird",
+     "ladybirds"
+    ],
+    "fact": "In North America it is usually called a ladybug."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 1,
+    "clue": "Grassy patch outside a house that needs mowing every week in summer.",
+    "answer": "Lawn",
+    "accept": [
+     "lawns"
+    ],
+    "fact": "Lawns are made of grasses that can survive being cut short again and again."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 2,
+    "clue": "Noisy machine that pushes fallen autumn leaves into a pile.",
+    "answer": "Leaf blower",
+    "accept": [
+     "leafblower",
+     "leaf-blower"
+    ],
+    "fact": "Many run on small two-stroke petrol engines, though battery-powered ones are now common."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 2,
+    "clue": "Crunchy salad leaf, such as cos, iceberg or little gem.",
+    "answer": "Lettuce",
+    "accept": [],
+    "fact": "Cos lettuce is also known as romaine."
+   },
+   {
+    "category": "wildcard",
+    "label": "Flower",
+    "difficulty": 3,
+    "clue": "Purple, sweet-smelling herb that bees love, used in soaps and perfumes.",
+    "answer": "Lavender",
+    "accept": [],
+    "fact": "It belongs to the mint family."
+   }
+  ]
+ },
+ {
+  "id": "M1",
+  "letter": "M",
+  "theme": "Mexico",
+  "themeAccept": [
+   "mexico",
+   "mexican",
+   "things from mexico"
+  ],
+  "themeHint": "Land of tacos and sombreros.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 3,
+    "clue": "Aztec emperor who met the Spanish conquistador Cortes in 1519.",
+    "answer": "Montezuma",
+    "accept": [
+     "moctezuma"
+    ],
+    "fact": "The Aztec capital he ruled, Tenochtitlan, lies beneath today's Mexico City."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 2,
+    "clue": "Orange-and-black butterfly that flies thousands of kilometres south to spend winter here.",
+    "answer": "Monarch",
+    "accept": [
+     "monarch butterfly",
+     "monarchs"
+    ],
+    "fact": "Millions cluster together on fir trees in the mountains of central Mexico each winter."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 3,
+    "clue": "Big industrial city in the north, a host of the 1986 and 2026 football World Cups.",
+    "answer": "Monterrey",
+    "accept": [
+     "monterey"
+    ],
+    "fact": "It is one of the country's largest cities, ringed by dramatic mountains."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 1,
+    "clue": "Pair of rattles shaken in time to Latin music, often made from gourds and seeds.",
+    "answer": "Maracas",
+    "accept": [
+     "maraca"
+    ],
+    "fact": "They are usually played in pairs, one in each hand."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 2,
+    "clue": "Rich, dark sauce often made with chillies and a hint of chocolate.",
+    "answer": "Mole",
+    "accept": [
+     "mole poblano"
+    ],
+    "fact": "Both Puebla and Oaxaca claim to be the home of this famous sauce."
+   },
+   {
+    "category": "wildcard",
+    "label": "Music",
+    "difficulty": 1,
+    "clue": "Strolling band in big sombreros, with trumpets, violins and guitars.",
+    "answer": "Mariachi",
+    "accept": [],
+    "fact": "UNESCO added this musical tradition to its list of intangible cultural heritage in 2011."
+   }
+  ]
+ },
+ {
+  "id": "M2",
+  "letter": "M",
+  "theme": "Insects and Bugs",
+  "themeAccept": [
+   "insects",
+   "insect",
+   "bugs",
+   "bug",
+   "insects and bugs",
+   "creepy crawlies",
+   "minibeasts"
+  ],
+  "themeHint": "Six legs and creepy-crawly.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 2,
+    "clue": "Little Miss ___ sat on a tuffet until a spider frightened her away.",
+    "answer": "Muffet",
+    "accept": [],
+    "fact": "The nursery rhyme was first printed in the early 1800s."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 1,
+    "clue": "Whining biter that can spread malaria.",
+    "answer": "Mosquito",
+    "accept": [
+     "mosquitoes",
+     "mosquitos",
+     "mozzie"
+    ],
+    "fact": "Only female mosquitoes bite, as they need blood to produce their eggs."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 3,
+    "clue": "Tall earth tower built by termites on the African savanna.",
+    "answer": "Mound",
+    "accept": [
+     "mounds"
+    ],
+    "fact": "Termite mounds have air channels that help keep the nest inside cool."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 1,
+    "clue": "Curved lens on a handle for taking a closer look at tiny bugs.",
+    "answer": "Magnifying glass",
+    "accept": [
+     "magnifier"
+    ],
+    "fact": "On a sunny day it can focus sunlight enough to start a fire."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 3,
+    "clue": "Chunky caterpillar eaten as a protein-rich snack in southern Africa.",
+    "answer": "Mopane worm",
+    "accept": [
+     "mopane",
+     "mopane worms"
+    ],
+    "fact": "It is the caterpillar of the emperor moth and feeds on mopane tree leaves."
+   },
+   {
+    "category": "wildcard",
+    "label": "Insect",
+    "difficulty": 2,
+    "clue": "Green insect that holds its front legs together as if praying.",
+    "answer": "Mantis",
+    "accept": [
+     "mantid"
+    ],
+    "fact": "It can turn its head almost 180 degrees to look over its shoulder."
+   }
+  ]
+ },
+ {
+  "id": "N1",
+  "letter": "N",
+  "theme": "Night Time",
+  "themeAccept": [
+   "night",
+   "night time",
+   "nighttime",
+   "night-time",
+   "bedtime",
+   "after dark",
+   "sleep"
+  ],
+  "themeHint": "When the sun goes down and the moon comes up.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 3,
+    "clue": "Greek goddess who personified the dark hours after sunset.",
+    "answer": "Nyx",
+    "accept": [],
+    "fact": "In Greek myth even Zeus was said to fear angering her."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 2,
+    "clue": "Small brown bird famous for its beautiful song after dark.",
+    "answer": "Nightingale",
+    "accept": [
+     "nightingales"
+    ],
+    "fact": "It is mostly unpaired males that sing through the night, to attract a mate."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 2,
+    "clue": "Spot at the top of the world where winter brings months of darkness.",
+    "answer": "North Pole",
+    "accept": [],
+    "fact": "At the North Pole the sun sets once a year and stays down for about six months."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 1,
+    "clue": "Small dim lamp left on so children aren't scared of the dark.",
+    "answer": "Nightlight",
+    "accept": [
+     "night light",
+     "night-light"
+    ],
+    "fact": "Many modern plug-in ones use LEDs and very little electricity."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 3,
+    "clue": "Warm drink taken just before bed; also an old-fashioned sleeping hat.",
+    "answer": "Nightcap",
+    "accept": [
+     "night cap"
+    ],
+    "fact": "Before central heating, people often wore cloth caps in bed to keep their heads warm."
+   },
+   {
+    "category": "wildcard",
+    "label": "Word",
+    "difficulty": 1,
+    "clue": "Describes owls, bats and other animals that are active after dark.",
+    "answer": "Nocturnal",
+    "accept": [],
+    "fact": "Many desert animals are active at night to avoid the heat of the day."
+   }
+  ]
+ },
+ {
+  "id": "N2",
+  "letter": "N",
+  "theme": "Movies",
+  "themeAccept": [
+   "movies",
+   "movie",
+   "films",
+   "film",
+   "cinema",
+   "the movies",
+   "hollywood"
+  ],
+  "themeHint": "Grab some popcorn.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 3,
+    "clue": "Keanu Reeves' hero who takes the red pill in The Matrix.",
+    "answer": "Neo",
+    "accept": [],
+    "fact": "The Matrix (1999) made 'bullet time' slow-motion effects famous."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 1,
+    "clue": "Simba's lioness best friend in The Lion King.",
+    "answer": "Nala",
+    "accept": [],
+    "fact": "Beyonce voiced her in the 2019 remake."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 2,
+    "clue": "Magical land reached through the back of a wardrobe.",
+    "answer": "Narnia",
+    "accept": [],
+    "fact": "The first Narnia book published was The Lion, the Witch and the Wardrobe in 1950."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 3,
+    "clue": "Harry Potter's first racing broomstick, a ___ Two Thousand.",
+    "answer": "Nimbus",
+    "accept": [
+     "nimbus 2000",
+     "nimbus two thousand"
+    ],
+    "fact": "Nimbus is also the name for a dark rain cloud."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 1,
+    "clue": "Cinema snack of tortilla chips smothered in melted cheese.",
+    "answer": "Nachos",
+    "accept": [
+     "nacho"
+    ],
+    "fact": "They are said to have been invented in Mexico in 1943 by Ignacio 'Nacho' Anaya."
+   },
+   {
+    "category": "wildcard",
+    "label": "Film",
+    "difficulty": 2,
+    "clue": "Nickname of Nigeria's booming film industry, which makes more films each year than Hollywood.",
+    "answer": "Nollywood",
+    "accept": [],
+    "fact": "Nollywood took off in the 1990s with straight-to-video films, and 1992's Living in Bondage is often called its first big hit."
+   }
+  ]
+ },
+ {
+  "id": "O1",
+  "letter": "O",
+  "theme": "Africa",
+  "themeAccept": [
+   "africa",
+   "african",
+   "things from africa",
+   "the african continent"
+  ],
+  "themeHint": "Think of the continent the Sahara sits on.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 2,
+    "clue": "Masked Nigerian striker who fired Napoli to an Italian league title and was named Africa's best player.",
+    "answer": "Osimhen",
+    "accept": [],
+    "fact": "Victor Osimhen was named CAF African Footballer of the Year for 2023."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 3,
+    "clue": "Shy Congo forest animal with zebra-striped legs; its closest relative is the giraffe.",
+    "answer": "Okapi",
+    "accept": [],
+    "fact": "The okapi is found in the wild only in the Democratic Republic of the Congo."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 3,
+    "clue": "Capital city of Burkina Faso, famous for its biennial pan-African film festival.",
+    "answer": "Ouagadougou",
+    "accept": [],
+    "fact": "Ouagadougou hosts FESPACO, one of Africa's largest film festivals."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 2,
+    "clue": "Tall, four-sided stone pillar with a pointed top, first carved by ancient Egyptians.",
+    "answer": "Obelisk",
+    "accept": [],
+    "fact": "Ancient Egyptian obelisks now stand in cities such as Rome, Paris, London and New York."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 1,
+    "clue": "Green pod vegetable that turns soups slimy; loved in West African stews.",
+    "answer": "Okra",
+    "accept": [],
+    "fact": "Okra is thought to have originated in Africa and is also known as ladies' fingers."
+   },
+   {
+    "category": "wildcard",
+    "label": "Bird",
+    "difficulty": 1,
+    "clue": "The world's largest bird cannot fly but can outrun most animals on the savanna.",
+    "answer": "Ostrich",
+    "accept": [],
+    "fact": "Ostriches lay the largest eggs of any living bird."
+   }
+  ]
+ },
+ {
+  "id": "O2",
+  "letter": "O",
+  "theme": "Science",
+  "themeAccept": [
+   "science",
+   "scientific",
+   "scientists",
+   "the lab",
+   "laboratory",
+   "chemistry"
+  ],
+  "themeHint": "Think of labs, experiments and microscopes.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 2,
+    "clue": "Physicist who led the atomic bomb project; Cillian Murphy played him in a 2023 film.",
+    "answer": "Oppenheimer",
+    "accept": [],
+    "fact": "The 2023 film about J. Robert Oppenheimer won the Oscar for Best Picture."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 1,
+    "clue": "Scientists marvel at this clever eight-armed sea creature with three hearts.",
+    "answer": "Octopus",
+    "accept": [],
+    "fact": "An octopus has blue blood and can change colour in a fraction of a second."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 2,
+    "clue": "Building with a domed roof and big telescopes for studying the stars.",
+    "answer": "Observatory",
+    "accept": [],
+    "fact": "Chile's dry Atacama Desert hosts some of the world's major telescopes thanks to its clear skies."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 3,
+    "clue": "Lab screen that draws electrical signals as moving wave shapes.",
+    "answer": "Oscilloscope",
+    "accept": [],
+    "fact": "Early versions of this instrument used cathode-ray tubes like old televisions."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 3,
+    "clue": "Thin skin from this layered bulb is a classic first sample under school microscopes.",
+    "answer": "Onion",
+    "accept": [],
+    "fact": "The skin cells of this vegetable are large and easy to see, which is why it is used in school labs."
+   },
+   {
+    "category": "wildcard",
+    "label": "Element",
+    "difficulty": 1,
+    "clue": "Gas with the symbol O that we need to breathe.",
+    "answer": "Oxygen",
+    "accept": [],
+    "fact": "Oxygen is the most abundant element in Earth's crust by mass."
+   }
+  ]
+ },
+ {
+  "id": "P1",
+  "letter": "P",
+  "theme": "France",
+  "themeAccept": [
+   "france",
+   "french",
+   "things from france",
+   "paris"
+  ],
+  "themeHint": "Think of the country of the Eiffel Tower.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 3,
+    "clue": "French scientist who gave his name to heating milk to kill germs.",
+    "answer": "Pasteur",
+    "accept": [],
+    "fact": "Louis Pasteur developed early vaccines against rabies and anthrax."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 2,
+    "clue": "Curly-coated dog, the national dog of France, often given fancy haircuts.",
+    "answer": "Poodle",
+    "accept": [],
+    "fact": "Despite its French fame, the poodle is believed to have originated in Germany as a water dog."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 1,
+    "clue": "City of light on the River Seine, home to the Louvre.",
+    "answer": "Paris",
+    "accept": [],
+    "fact": "The Eiffel Tower was built for the 1889 World's Fair in this city."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 2,
+    "clue": "French car maker whose badge shows a lion.",
+    "answer": "Peugeot",
+    "accept": [],
+    "fact": "Peugeot began as a family business making tools and coffee grinders before cars."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 1,
+    "clue": "Flaky French breakfast pastry with a dark, sweet bar baked inside.",
+    "answer": "Pain au chocolat",
+    "accept": [
+     "pains au chocolat"
+    ],
+    "fact": "In south-west France this pastry is often called a chocolatine."
+   },
+   {
+    "category": "wildcard",
+    "label": "Sport",
+    "difficulty": 3,
+    "clue": "Game of throwing metal balls towards a small wooden jack, played in village squares.",
+    "answer": "Petanque",
+    "accept": [
+     "petanque"
+    ],
+    "fact": "Petanque was invented in the south of France in the early 1900s."
+   }
+  ]
+ },
+ {
+  "id": "P2",
+  "letter": "P",
+  "theme": "South America",
+  "themeAccept": [
+   "south america",
+   "south american",
+   "latin america",
+   "the americas"
+  ],
+  "themeHint": "Think of the Amazon and the Andes.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 1,
+    "clue": "Brazilian football legend nicknamed O Rei, the King.",
+    "answer": "Pele",
+    "accept": [
+     "pelé"
+    ],
+    "fact": "Pele is the only player to have won three FIFA World Cups."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 2,
+    "clue": "Sharp-toothed fish of Amazon rivers, famous for feeding frenzies.",
+    "answer": "Piranha",
+    "accept": [],
+    "fact": "Many piranha species actually eat plants and seeds as well as meat."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 1,
+    "clue": "Andean country home to Machu Picchu and Lima.",
+    "answer": "Peru",
+    "accept": [],
+    "fact": "Lake Titicaca, on Peru's border with Bolivia, is one of the highest navigable lakes in the world."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 2,
+    "clue": "Woollen blanket with a hole for your head, worn in the Andes.",
+    "answer": "Poncho",
+    "accept": [],
+    "fact": "Ponchos have been worn in the Andes since before the Spanish arrived."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 3,
+    "clue": "This staple tuber was first farmed in the Andes before spreading worldwide.",
+    "answer": "Potato",
+    "accept": [],
+    "fact": "The potato was first domesticated in the Andes of present-day Peru and Bolivia."
+   },
+   {
+    "category": "wildcard",
+    "label": "Region",
+    "difficulty": 3,
+    "clue": "Windswept land of glaciers and mountains at the southern tip of Argentina and Chile.",
+    "answer": "Patagonia",
+    "accept": [],
+    "fact": "Patagonia's Torres del Paine and Perito Moreno Glacier draw visitors from around the world."
+   }
+  ]
+ },
+ {
+  "id": "R1",
+  "letter": "R",
+  "theme": "Things That Are Red",
+  "themeAccept": [
+   "red",
+   "things that are red",
+   "the colour red",
+   "the color red",
+   "red things"
+  ],
+  "themeHint": "Think of a colour that means stop.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 1,
+    "clue": "Reindeer with a glowing nose who guided Santa's sleigh.",
+    "answer": "Rudolph",
+    "accept": [],
+    "fact": "Rudolph first appeared in a 1939 booklet given away by a US department store."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 2,
+    "clue": "Small garden bird with a bright orange-red breast, a symbol of winter cards.",
+    "answer": "Robin",
+    "accept": [],
+    "fact": "The European robin often follows gardeners to catch worms turned up by digging."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 3,
+    "clue": "Smallest US state, which gave its name to a famous breed of chicken with rusty feathers.",
+    "answer": "Rhode Island",
+    "accept": [],
+    "fact": "The Rhode Island Red is the official state bird of Rhode Island."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 3,
+    "clue": "Precious gemstone, the 40th wedding anniversary stone.",
+    "answer": "Ruby",
+    "accept": [],
+    "fact": "Rubies and sapphires are both forms of the same mineral, corundum."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 2,
+    "clue": "Soft berry made of tiny bumps; it leaves a hollow when pulled from the plant.",
+    "answer": "Raspberry",
+    "accept": [],
+    "fact": "A raspberry is made up of many small drupelets, each with its own seed."
+   },
+   {
+    "category": "wildcard",
+    "label": "Flower",
+    "difficulty": 1,
+    "clue": "Thorny flower given in bunches on Valentine's Day.",
+    "answer": "Rose",
+    "accept": [],
+    "fact": "The rose is the national flower of England and the United States."
+   }
+  ]
+ },
+ {
+  "id": "R2",
+  "letter": "R",
+  "theme": "Pets",
+  "themeAccept": [
+   "pets",
+   "pet",
+   "pet animals",
+   "animals at home",
+   "pet care"
+  ],
+  "themeHint": "Think of animals that live in your home.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 2,
+    "clue": "Old-fashioned name for a pet dog, also a word for a wanderer.",
+    "answer": "Rover",
+    "accept": [],
+    "fact": "NASA's Mars vehicles are also called by this word, which means a wanderer."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 1,
+    "clue": "Long-eared pet that lives in a hutch and nibbles carrots.",
+    "answer": "Rabbit",
+    "accept": [],
+    "fact": "A rabbit's front teeth never stop growing."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 2,
+    "clue": "Shelter where abandoned cats and dogs wait to be adopted (two words).",
+    "answer": "Rescue centre",
+    "accept": [
+     "rescue center",
+     "rescue shelter"
+    ],
+    "fact": "Battersea in London, founded in 1860, is one of the oldest animal shelters in the world."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 3,
+    "clue": "Ribbon prize pinned on the winner at a pet show.",
+    "answer": "Rosette",
+    "accept": [],
+    "fact": "In the UK a red one usually means first place, while in the US first place is usually blue."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 3,
+    "clue": "Dried grapes that are poisonous to dogs, so never share them.",
+    "answer": "Raisins",
+    "accept": [
+     "raisin"
+    ],
+    "fact": "Grapes and their dried form can cause kidney failure in dogs."
+   },
+   {
+    "category": "wildcard",
+    "label": "Breed",
+    "difficulty": 1,
+    "clue": "Powerful black-and-tan German guard dog breed.",
+    "answer": "Rottweiler",
+    "accept": [],
+    "fact": "The breed is named after the German town of Rottweil."
+   }
+  ]
+ },
+ {
+  "id": "S1",
+  "letter": "S",
+  "theme": "Superheroes",
+  "themeAccept": [
+   "superheroes",
+   "superhero",
+   "heroes",
+   "comic books",
+   "comics",
+   "marvel"
+  ],
+  "themeHint": "Think of capes, masks and saving the day.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 1,
+    "clue": "Caped hero from Krypton who works as reporter Clark Kent.",
+    "answer": "Superman",
+    "accept": [],
+    "fact": "This hero first appeared in Action Comics in 1938."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 1,
+    "clue": "A bite from one of these gave Peter Parker his powers.",
+    "answer": "Spider",
+    "accept": [],
+    "fact": "Weight for weight, the silk of this creature can be stronger than steel."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 3,
+    "clue": "Kansas farming town where young Clark Kent grew up.",
+    "answer": "Smallville",
+    "accept": [],
+    "fact": "A TV series named after this town ran for ten seasons from 2001."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 2,
+    "clue": "Captain America's round, star-marked piece of defensive kit.",
+    "answer": "Shield",
+    "accept": [],
+    "fact": "Captain America first appeared in comics in 1941."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 2,
+    "clue": "Popeye gulps this leafy green from a can to get super strength.",
+    "answer": "Spinach",
+    "accept": [],
+    "fact": "Spinach is rich in iron, but the iron is not easily absorbed by the body."
+   },
+   {
+    "category": "wildcard",
+    "label": "Role",
+    "difficulty": 3,
+    "clue": "Helper hero who fights alongside the main one, like Robin with Batman.",
+    "answer": "Sidekick",
+    "accept": [],
+    "fact": "Robin first appeared alongside Batman in 1940."
+   }
+  ]
+ },
+ {
+  "id": "S2",
+  "letter": "S",
+  "theme": "Scotland",
+  "themeAccept": [
+   "scotland",
+   "scottish",
+   "things from scotland",
+   "scots"
+  ],
+  "themeHint": "Think of kilts and bagpipes.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 2,
+    "clue": "Edinburgh-born actor who was the first James Bond on film (full name).",
+    "answer": "Sean Connery",
+    "accept": [
+     "sean"
+    ],
+    "fact": "Sean Connery won an Oscar for his role in The Untouchables."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 2,
+    "clue": "Small, sturdy horse from the islands far north of the Scottish mainland.",
+    "answer": "Shetland pony",
+    "accept": [
+     "shetland"
+    ],
+    "fact": "Shetland ponies are among the strongest horses for their size."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 3,
+    "clue": "Seaside town on the Fife coast known as the home of golf.",
+    "answer": "St Andrews",
+    "accept": [
+     "saint andrews"
+    ],
+    "fact": "The University of St Andrews, founded in the 1400s, is Scotland's oldest university."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 3,
+    "clue": "Pouch worn on a belt at the front of a kilt.",
+    "answer": "Sporran",
+    "accept": [],
+    "fact": "Kilts traditionally have no pockets, which is why a sporran is worn."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 1,
+    "clue": "Crumbly, buttery biscuit, often sold in tartan tins.",
+    "answer": "Shortbread",
+    "accept": [],
+    "fact": "Classic shortbread uses just three ingredients: butter, sugar and flour."
+   },
+   {
+    "category": "wildcard",
+    "label": "Fish",
+    "difficulty": 1,
+    "clue": "Pink-fleshed fish that leaps up Scottish rivers to spawn.",
+    "answer": "Salmon",
+    "accept": [],
+    "fact": "Salmon return to the river where they hatched in order to breed."
+   }
+  ]
+ },
+ {
+  "id": "T1",
+  "letter": "T",
+  "theme": "Halloween",
+  "themeAccept": [
+   "halloween",
+   "spooky",
+   "spooky things",
+   "october 31",
+   "all hallows eve"
+  ],
+  "themeHint": "Think of 31 October.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 3,
+    "clue": "Director of Edward Scissorhands and The Nightmare Before Christmas (full name).",
+    "answer": "Tim Burton",
+    "accept": [
+     "tim"
+    ],
+    "fact": "Tim Burton worked as an animator at Disney early in his career."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 2,
+    "clue": "Big, hairy spider that makes a classic creepy costume prop.",
+    "answer": "Tarantula",
+    "accept": [],
+    "fact": "Some female tarantulas can live for more than 20 years."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 2,
+    "clue": "Region of Romania where Bram Stoker set Count Dracula's castle.",
+    "answer": "Transylvania",
+    "accept": [],
+    "fact": "Bran Castle in this region is often marketed as Dracula's Castle."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 1,
+    "clue": "Engraved stone marking a grave, a favourite spooky decoration.",
+    "answer": "Tombstone",
+    "accept": [
+     "tomb stone"
+    ],
+    "fact": "Tombstone is also the name of a famous Wild West town in Arizona."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 3,
+    "clue": "Fruit on a stick coated in hard caramel, a treat at autumn fairs.",
+    "answer": "Toffee apple",
+    "accept": [
+     "taffy apple"
+    ],
+    "fact": "In the US a similar treat is called a candy apple."
+   },
+   {
+    "category": "wildcard",
+    "label": "Tradition",
+    "difficulty": 1,
+    "clue": "Children in costume knock on doors saying this three-word phrase.",
+    "answer": "Trick or treat",
+    "accept": [
+     "trick-or-treat",
+     "trick or treating"
+    ],
+    "fact": "Trick-or-treating became widespread in North America in the mid-1900s."
+   }
+  ]
+ },
+ {
+  "id": "T2",
+  "letter": "T",
+  "theme": "Tiny Things",
+  "themeAccept": [
+   "tiny things",
+   "tiny",
+   "small things",
+   "small",
+   "little things",
+   "miniature"
+  ],
+  "themeHint": "Think small. Very small.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 1,
+    "clue": "Peter Pan's little fairy who sprinkles pixie dust.",
+    "answer": "Tinker Bell",
+    "accept": [
+     "tinkerbell"
+    ],
+    "fact": "Tinker Bell first appeared in J. M. Barrie's 1904 play Peter Pan."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 2,
+    "clue": "Tiny eight-legged bloodsucker that clings to dogs and deer.",
+    "answer": "Tick",
+    "accept": [],
+    "fact": "Ticks are arachnids, related to spiders rather than insects."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 3,
+    "clue": "Pacific island nation, one of the smallest countries on Earth, with the web suffix .tv.",
+    "answer": "Tuvalu",
+    "accept": [],
+    "fact": "Tuvalu earns income by licensing its .tv internet domain."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 2,
+    "clue": "Little metal cap that protects your fingertip when sewing.",
+    "answer": "Thimble",
+    "accept": [],
+    "fact": "Thimbles have been used for sewing since at least Roman times."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 3,
+    "clue": "Spanish small plates, shared with friends in bars.",
+    "answer": "Tapas",
+    "accept": [],
+    "fact": "Tapas comes from the Spanish verb tapar, meaning to cover."
+   },
+   {
+    "category": "wildcard",
+    "label": "Measure",
+    "difficulty": 1,
+    "clue": "Smallest common kitchen spoon, used for sugar in tea.",
+    "answer": "Teaspoon",
+    "accept": [
+     "tsp"
+    ],
+    "fact": "In recipes, three of these spoons make one tablespoon."
+   }
+  ]
+ },
+ {
+  "id": "V1",
+  "letter": "V",
+  "theme": "Italy",
+  "themeAccept": [
+   "italy",
+   "italian",
+   "things from italy",
+   "rome"
+  ],
+  "themeHint": "Think of a boot-shaped country.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 2,
+    "clue": "Venetian composer of The Four Seasons.",
+    "answer": "Vivaldi",
+    "accept": [],
+    "fact": "Antonio Vivaldi was nicknamed the Red Priest because of his red hair."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 3,
+    "clue": "Venomous snake family; every dangerous snake in Italy belongs to it.",
+    "answer": "Viper",
+    "accept": [],
+    "fact": "Vipers have long hinged fangs that fold back when the mouth is closed."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 1,
+    "clue": "Italian city of canals, gondolas and St Mark's Square.",
+    "answer": "Venice",
+    "accept": [
+     "venezia"
+    ],
+    "fact": "Venice is built on more than 100 small islands in a lagoon."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 2,
+    "clue": "Classic Italian scooter whose name means wasp.",
+    "answer": "Vespa",
+    "accept": [],
+    "fact": "The Vespa was first launched by the Piaggio company in 1946."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 3,
+    "clue": "Modena's famous balsamic kind of this sour liquid is aged in wooden barrels.",
+    "answer": "Vinegar",
+    "accept": [],
+    "fact": "Traditional balsamic from Modena must be aged for at least 12 years."
+   },
+   {
+    "category": "wildcard",
+    "label": "Volcano",
+    "difficulty": 1,
+    "clue": "Volcano that buried Pompeii in AD 79, still towering over Naples.",
+    "answer": "Vesuvius",
+    "accept": [],
+    "fact": "The eruption of Vesuvius in AD 79 also buried the nearby town of Herculaneum."
+   }
+  ]
+ },
+ {
+  "id": "V2",
+  "letter": "V",
+  "theme": "Love and Romance",
+  "themeAccept": [
+   "love",
+   "romance",
+   "romantic",
+   "valentines day",
+   "valentine",
+   "weddings"
+  ],
+  "themeHint": "Think of hearts and 14 February.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 1,
+    "clue": "Saint whose feast day on 14 February is for sweethearts.",
+    "answer": "Valentine",
+    "accept": [],
+    "fact": "Saint Valentine's Day became linked with romance in the Middle Ages."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 3,
+    "clue": "Prairie species of this small rodent are famous for pairing up for life.",
+    "answer": "Vole",
+    "accept": [],
+    "fact": "Prairie voles are among the few mammals that form lifelong pair bonds."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 2,
+    "clue": "Northern Italian city where Romeo and Juliet is set.",
+    "answer": "Verona",
+    "accept": [],
+    "fact": "Tourists in this city visit a balcony said to be Juliet's."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 2,
+    "clue": "Sheer fabric covering a bride's face.",
+    "answer": "Veil",
+    "accept": [],
+    "fact": "Wedding veils date back to ancient Rome."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 3,
+    "clue": "Sweet flavour from orchid pods, used in wedding cakes and ice cream.",
+    "answer": "Vanilla",
+    "accept": [],
+    "fact": "Vanilla comes from the pods of an orchid native to Mexico."
+   },
+   {
+    "category": "wildcard",
+    "label": "Flower",
+    "difficulty": 1,
+    "clue": "Roses are red, these are blue, sugar is sweet, and so are you.",
+    "answer": "Violets",
+    "accept": [
+     "violet"
+    ],
+    "fact": "Violets are edible and are sometimes candied to decorate cakes."
+   }
+  ]
+ },
+ {
+  "id": "W1",
+  "letter": "W",
+  "theme": "Fairy Tales",
+  "themeAccept": [
+   "fairy tales",
+   "fairytales",
+   "fairy tale",
+   "stories",
+   "storybooks",
+   "fables"
+  ],
+  "themeHint": "Think of once upon a time.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 2,
+    "clue": "Girl who flies to Neverland with Peter Pan.",
+    "answer": "Wendy",
+    "accept": [
+     "wendy darling"
+    ],
+    "fact": "The name Wendy became popular after Peter Pan was first staged in 1904."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 1,
+    "clue": "Big bad creature who blew down houses and tricked Red Riding Hood.",
+    "answer": "Wolf",
+    "accept": [],
+    "fact": "Wolves live and hunt in family groups called packs."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 2,
+    "clue": "Alice fell down a rabbit hole into this strange land.",
+    "answer": "Wonderland",
+    "accept": [],
+    "fact": "Lewis Carroll wrote Alice's Adventures in Wonderland for a real girl named Alice Liddell."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 1,
+    "clue": "Stick a fairy godmother waves to work her magic.",
+    "answer": "Wand",
+    "accept": [],
+    "fact": "Cinderella's fairy godmother turns a pumpkin into a coach."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 3,
+    "clue": "Thumbelina slept in a shell of this nut, polished as a cradle.",
+    "answer": "Walnut",
+    "accept": [],
+    "fact": "In Andersen's tale, Thumbelina's cradle is a polished walnut shell."
+   },
+   {
+    "category": "wildcard",
+    "label": "Character",
+    "difficulty": 3,
+    "clue": "Hansel and Gretel's captor lived in a gingerbread house and rode a broomstick in other tales.",
+    "answer": "Witch",
+    "accept": [],
+    "fact": "Hansel and Gretel was collected by the Brothers Grimm and first published in 1812."
+   }
+  ]
+ },
+ {
+  "id": "W2",
+  "letter": "W",
+  "theme": "Music",
+  "themeAccept": [
+   "music",
+   "musical",
+   "songs",
+   "singing",
+   "musicians"
+  ],
+  "themeHint": "Think of songs, singers and dancing.",
+  "clues": [
+   {
+    "category": "name",
+    "label": "Name",
+    "difficulty": 2,
+    "clue": "Lagos-born Afrobeats star who sang on Drake's chart-topping One Dance.",
+    "answer": "Wizkid",
+    "accept": [
+     "wiz kid"
+    ],
+    "fact": "Wizkid won a Grammy in 2021 for Brown Skin Girl, his song with Beyoncé, Blue Ivy and Saint Jhn."
+   },
+   {
+    "category": "animal",
+    "label": "Animal",
+    "difficulty": 1,
+    "clue": "Humpback types of this ocean giant sing long, haunting songs.",
+    "answer": "Whale",
+    "accept": [],
+    "fact": "Male humpbacks sing complex songs that change gradually over the years."
+   },
+   {
+    "category": "place",
+    "label": "Place",
+    "difficulty": 3,
+    "clue": "New York farm festival of 1969 where Jimi Hendrix played.",
+    "answer": "Woodstock",
+    "accept": [],
+    "fact": "The festival was held in Bethel, New York, some distance from the town it was named after."
+   },
+   {
+    "category": "thing",
+    "label": "Thing",
+    "difficulty": 1,
+    "clue": "Small instrument a referee blows to stop play.",
+    "answer": "Whistle",
+    "accept": [],
+    "fact": "A tin version of this instrument is common in Irish folk music."
+   },
+   {
+    "category": "food",
+    "label": "Food",
+    "difficulty": 3,
+    "clue": "Fruit in the title of a Grammy-winning Harry Styles hit with sugar.",
+    "answer": "Watermelon",
+    "accept": [],
+    "fact": "Watermelon Sugar won Harry Styles a Grammy for Best Pop Solo Performance."
+   },
+   {
+    "category": "wildcard",
+    "label": "Dance",
+    "difficulty": 2,
+    "clue": "Elegant ballroom dance in three-four time, loved in Vienna.",
+    "answer": "Waltz",
+    "accept": [],
+    "fact": "Johann Strauss II wrote The Blue Danube, a famous piece in this dance style."
+   }
+  ]
+ }
+]

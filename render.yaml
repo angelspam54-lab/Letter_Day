@@ -1,0 +1,15 @@
+# Deploy on Render (render.com): New > Blueprint, pick this repo.
+# The database lives on Neon (neon.tech, free plan): Render asks for its connection string as DATABASE_URL.
+# Free plan: the app sleeps after 15 min idle, so the first visit after that takes ~30s.
+services:
+  - type: web
+    name: letterday
+    runtime: docker
+    plan: free
+    region: frankfurt   # match the Neon region (AWS Europe Central 1, Frankfurt)
+    healthCheckPath: /api/health
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: TRUST_PROXY
+        value: "1"

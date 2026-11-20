@@ -1,0 +1,224 @@
+achromatic color
+achromatic colour
+alabaster
+alizarine red
+amber
+apricot
+aqua
+aquamarine
+ash gray
+ash grey
+azure
+beige
+black
+blackness
+bleach
+blond
+blonde
+blue
+blue green
+blueness
+bluish green
+bone
+bottle green
+brick red
+bronze
+brown
+brownish yellow
+brownness
+buff
+burgundy
+burnt sienna
+burnt umber
+canary
+canary yellow
+caramel
+caramel brown
+cardinal
+carmine
+carnation
+cerise
+cerulean
+chalk
+charcoal
+charcoal gray
+charcoal grey
+chartreuse
+cherry
+cherry red
+chestnut
+chocolate
+chromatic color
+chromatic colour
+chrome green
+chrome red
+claret
+coal black
+cobalt blue
+coffee
+complementary
+complementary color
+copper
+copper color
+coral
+cream
+crimson
+cyan
+dapple-gray
+dapple-grey
+dappled-gray
+dappled-grey
+dark blue
+dark red
+deep brown
+deep red
+drab
+dun
+ebony
+ecru
+emerald
+fawn
+frostiness
+fuchsia
+fuschia
+gamboge
+gold
+gray
+grayish brown
+grayness
+green
+greenish blue
+greenish yellow
+greenishness
+greenness
+grey
+greyish brown
+greyness
+hazel
+hoariness
+indigo
+inkiness
+iron blue
+iron-gray
+iron-grey
+ivory
+jade
+jade green
+jet black
+kelly green
+keppel
+khaki
+lavender
+lazuline
+lemon
+lemon yellow
+light brown
+lilac
+lime
+magenta
+mahogany
+maize
+maroon
+mauve
+mint
+mocha
+mustard
+navy
+navy blue
+ocher
+ochre
+off-white
+old gold
+old rose
+olive
+olive brown
+olive drab
+olive green
+olive-green
+orange
+orange red
+orange yellow
+orangeness
+oxblood red
+oxford gray
+oxford grey
+pale yellow
+pastel
+pea green
+peach
+peacock blue
+pearl
+pink
+pinkness
+pitch black
+plum
+powder blue
+puce
+purple
+purpleness
+purplish blue
+purplish pink
+purplish red
+purplish-red
+raw sienna
+red
+reddish blue
+reddish brown
+reddish orange
+reddish purple
+redness
+rose
+rosiness
+royal blue
+royal purple
+ruby
+rust
+sable
+saffron
+sage green
+salmon
+salmon pink
+sanguine
+sapphire
+scarlet
+sea green
+sepia
+silver
+silver gray
+silver grey
+sky-blue
+snuff-color
+snuff-colour
+solferino
+soot black
+spectral color
+spectral colour
+steel blue
+steel gray
+steel grey
+straw
+tan
+tangerine
+tattletale gray
+tattletale grey
+taupe
+teal
+topaz
+turquoise
+ultramarine
+umber
+vermilion
+violet
+viridity
+wheat
+white
+whiteness
+wine
+wine-colored
+wine-coloured
+yellow
+yellow green
+yellowish brown
+yellowish green
+yellowish pink
+yellowness
