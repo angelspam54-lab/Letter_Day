@@ -61,6 +61,7 @@ export const api = {
   clueGuess: (index: number, guess: string) => req<ClueGuessResponse>('/clue/guess', { method: 'POST', body: { index, guess } }),
   clueHint: (index: number) => req<ClueDay>('/clue/hint', { method: 'POST', body: { index } }),
   clueTheme: (guess: string) => req<ClueGuessResponse>('/clue/theme', { method: 'POST', body: { guess } }),
+  clueGiveUp: (index: number) => req<ClueDay>('/clue/giveup', { method: 'POST', body: { index } }),
   clueNudge: () => req<ClueDay>('/clue/nudge', { method: 'POST' }),
   createParty: () => req<{ code: string }>('/party', { method: 'POST' }),
   partyExists: (code: string) => req<{ exists: boolean }>(`/party/${encodeURIComponent(code)}`),

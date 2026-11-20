@@ -54,7 +54,7 @@ export function Clue({ app }: { app: App }) {
         </div>
 
         <ol class="clues">
-          {d.clues.map((c) => <ClueCard key={c.index} c={c} open={open === c.index} onOpen={() => setOpen(open === c.index ? null : c.index)} update={(x) => { update(x); const next = x.clues[c.index].done ? firstOpen(x) : c.index; setOpen(next); }} />)}
+          {d.clues.map((c) => <ClueCard key={c.index} c={c} open={open === c.index} onOpen={() => setOpen(open === c.index ? null : c.index)} update={(x) => { update(x); const n = nextAfter(x, c.index); setOpen(!x.clues[c.index].done ? c.index : x.clues[n].done ? firstOpen(x) : n); }} onSkip={() => setOpen(nextAfter(d, c.index))} />)}
         </ol>
 
         <ThemeCard d={d} open={open === 'theme'} onOpen={() => setOpen('theme')} update={update} />
@@ -65,12 +65,24 @@ export function Clue({ app }: { app: App }) {
   );
 }
 
+/** The next unfinished clue after this one (wrapping round), for "Skip"; stays put if it's the only one left. */
+const nextAfter = (d: ClueDay, from: number): number => {
+  for (let k = 1; k < d.clues.length; k++) { const i = (from + k) % d.clues.length; if (!d.clues[i].done) return i; }
+  return from;
+};
+
 const firstOpen = (d: ClueDay): number | 'theme' | null => {
   const i = d.clues.findIndex((c) => !c.done);
   return i >= 0 ? i : d.theme.done ? null : 'theme';
 };
 
-function ClueCard({ c, open, onOpen, update }: { c: CluePublic; open: boolean; onOpen: () => void; update: (d: ClueDay) => void }) {
+function ClueCard({ c, open, onOpen, update, onSkip }: { c: CluePublic; open: boolean; onOpen: () => void; update: (d: ClueDay) => void; onSkip: () => void }) {
+  const [sure, setSure] = useState(false);
+  useEffect(() => setSure(false), [open]);
+  const giveUp = async () => {
+    if (!sure) { setSure(true); return; }
+    try { update(await api.clueGiveUp(c.index)); fx.wrong(); } catch (err) { toast(err instanceof ApiError ? err.message : 'Could not do that'); }
+  };
   const [text, setText] = useState('');
   const [note, setNote] = useState('');
   const [busy, setBusy] = useState(false);
@@ -114,6 +126,12 @@ function ClueCard({ c, open, onOpen, update }: { c: CluePublic; open: boolean; o
         <div class="cc-tools">
           <span class={`small ${note.startsWith('So') ? 'warn' : 'muted'}`} aria-live="polite">{note || (c.guesses.length ? `Tried: ${c.guesses.join(', ')}` : '')}</span>
           {(c.mask.match(/_/g) ?? []).length > 1 && <button class="btn small quiet" type="button" onClick={hint}>Reveal a letter (−{HINT_COST})</button>}
+        </div>
+      )}
+      {open && !c.done && (
+        <div class="cc-tools cc-skip">
+          <button class="btn small quiet" type="button" onClick={onSkip}>Skip for now</button>
+          <button class={`btn small quiet ${sure ? 'warn' : ''}`} type="button" onClick={giveUp}>{sure ? 'Tap again to show the answer (0 pts)' : 'Give up'}</button>
         </div>
       )}
       {c.done && <p class="cc-fact small">{c.fact}{c.solvedPct !== undefined && <span class="muted"> · {c.solvedPct}% of players got it</span>}</p>}

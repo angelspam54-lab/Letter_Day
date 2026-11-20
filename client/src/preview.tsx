@@ -68,6 +68,7 @@ Object.assign(api, {
     if (ok) { st.theme.solved = st.theme.done = true; st.theme.points = Math.max(20, THEME_POINTS[st.theme.guesses.length - 1] - (st.theme.nudge ? NUDGE_COST : 0)); } else if (st.theme.guesses.length >= THEME_TRIES) st.theme.done = true;
     save(current, st); return { result: ok ? 'correct' : 'wrong', day: view(current, st) };
   },
+  clueGiveUp: async (i: number) => { const st = load(current); const x = st.clues[i]; if (!x.done) { x.done = true; x.points = 0; save(current, st); } return view(current, st); },
   clueNudge: async () => { const st = load(current); st.theme.nudge = true; save(current, st); return view(current, st); },
 });
 

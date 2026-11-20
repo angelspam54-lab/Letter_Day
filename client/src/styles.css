@@ -375,3 +375,5 @@ ol, ul { margin: 0; padding: 0; list-style: none; }
 .pv-item.started { border-color: var(--ink-2); }
 .pv-item.done { background: var(--surface-2); }
 .pv-item.done b { color: var(--ok); }
+.cc-skip { justify-content: flex-start; gap: 4px; margin-top: -4px; }
+.cc-skip .btn.warn { color: var(--warn); }
