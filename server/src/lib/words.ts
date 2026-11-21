@@ -65,6 +65,9 @@ function loadList(name: string): Index {
   return idx;
 }
 
+/** True if a list (e.g. 'animal') has this word exactly (lowercase, no spaces). */
+export const listHas = (name: string, key: string) => loadList(name).exact.has(key);
+
 /** How many accepted answers a category has for a letter (used to pick fair bonus categories). */
 export function countFor(category: Category, letter: string): number {
   const l = letter.toLowerCase();

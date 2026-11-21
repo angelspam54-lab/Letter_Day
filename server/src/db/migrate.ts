@@ -34,6 +34,14 @@ const MIGRATIONS: string[] = [
      PRIMARY KEY (player_id, date)
    );
    CREATE INDEX clue_plays_date ON clue_plays (date)`,
+  // 3: The Ladder
+  `CREATE TABLE ladder_days (date DATE PRIMARY KEY, puzzle JSONB NOT NULL);
+   CREATE TABLE ladder_plays (
+     player_id UUID NOT NULL REFERENCES players(id) ON DELETE CASCADE, date DATE NOT NULL,
+     state JSONB NOT NULL, score INTEGER NOT NULL DEFAULT 0, steps INTEGER, started_at TIMESTAMPTZ NOT NULL DEFAULT now(), finished_at TIMESTAMPTZ,
+     PRIMARY KEY (player_id, date)
+   );
+   CREATE INDEX ladder_plays_date ON ladder_plays (date)`,
 ];
 
 export async function migrate(db: Db): Promise<void> {

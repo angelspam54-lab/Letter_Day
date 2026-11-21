@@ -1,10 +1,13 @@
 // Party Rooms: live rounds for a group of friends, held in memory (one server instance).
-// Flow: lobby → reveal (letter spins) → playing → STOP (short grace) → review & votes → scores → … → final.
+// Letter rounds: lobby → reveal (letter spins) → playing → STOP (short grace) → review & votes → scores → … → final.
+// Ladder races: lobby → reveal → playing (everyone climbs the same ladder; first to the top wins most) → scores → … → final.
 import type { WebSocket } from 'ws';
 import {
   CORE, LETTERS, PARTY_POINTS, PARTY_ROUND_OPTIONS, PARTY_SECONDS_OPTIONS, STOP_GRACE_MS, bonusCandidates, hash32, lagosDate, type Category,
 } from '../../../shared/game.js';
-import type { ClientMsg, PartyJudgement, PartyPhase, PartyState, ServerMsg } from '../../../shared/types.js';
+import type { ClientMsg, PartyGame, PartyJudgement, PartyPhase, PartyState, ServerMsg } from '../../../shared/types.js';
+import { RACE_POINTS, RACE_SECONDS_OPTIONS } from '../../../shared/ladder.js';
+import { checkPath, makePuzzle, type LadderPuzzle } from './ladder.js';
 import { countFor, judge } from './words.js';
 import { shareId } from './ids.js';
 
@@ -19,7 +22,7 @@ interface Room {
   hostId: string;
   members: Map<string, Member>;
   phase: PartyPhase;
-  settings: { rounds: number; seconds: number; startWithDaily: boolean };
+  settings: { rounds: number; seconds: number; startWithDaily: boolean; game: PartyGame };
   round: number;
   letter: string | null;
   categories: Category[];
@@ -30,6 +33,8 @@ interface Room {
   roundPoints: Record<string, number> | null;
   timer: ReturnType<typeof setTimeout> | null;
   touched: number;
+  /** Ladder races: this round's puzzle, everyone's route and when they reached the top. */
+  ladder: { puzzle: LadderPuzzle; paths: Map<string, string[]>; finishedAt: Map<string, number> } | null;
 }
 
 export class Parties {
@@ -45,8 +50,8 @@ export class Parties {
     let code = shareId(5).toUpperCase();
     while (this.rooms.has(code)) code = shareId(5).toUpperCase();
     this.rooms.set(code, {
-      code, hostId: '', members: new Map(), phase: 'lobby', settings: { rounds: 5, seconds: 90, startWithDaily: true },
-      round: 0, letter: null, categories: [], usedLetters: [], endsAt: null, stoppedBy: null, judged: null, roundPoints: null, timer: null, touched: Date.now(),
+      code, hostId: '', members: new Map(), phase: 'lobby', settings: { rounds: 5, seconds: 90, startWithDaily: true, game: 'letters' },
+      round: 0, letter: null, categories: [], usedLetters: [], endsAt: null, stoppedBy: null, judged: null, roundPoints: null, timer: null, touched: Date.now(), ladder: null,
     });
     return code;
   }
@@ -109,8 +114,12 @@ export class Parties {
     switch (msg.t) {
       case 'settings':
         if (!host || room.phase !== 'lobby') return;
+        if ((msg.game === 'letters' || msg.game === 'ladder') && msg.game !== room.settings.game) {
+          room.settings.game = msg.game;
+          room.settings.seconds = msg.game === 'ladder' ? 120 : 90;
+        }
         if (msg.rounds && (PARTY_ROUND_OPTIONS as readonly number[]).includes(msg.rounds)) room.settings.rounds = msg.rounds;
-        if (msg.seconds && (PARTY_SECONDS_OPTIONS as readonly number[]).includes(msg.seconds)) room.settings.seconds = msg.seconds;
+        if (msg.seconds && ((room.settings.game === 'ladder' ? RACE_SECONDS_OPTIONS : PARTY_SECONDS_OPTIONS) as readonly number[]).includes(msg.seconds)) room.settings.seconds = msg.seconds;
         if (typeof msg.startWithDaily === 'boolean') room.settings.startWithDaily = msg.startWithDaily;
         break;
       case 'start':
@@ -120,6 +129,18 @@ export class Parties {
         room.usedLetters = [];
         void this.nextRound(room);
         return;
+      case 'ladder': {
+        const L = room.ladder;
+        if (room.phase !== 'playing' || !L || L.finishedAt.has(pid)) return;
+        const path = checkPath(L.puzzle, msg.path);
+        L.paths.set(pid, path);
+        if (path[path.length - 1] === L.puzzle.end) {
+          L.finishedAt.set(pid, Date.now());
+          // Everyone still here has finished: end the round.
+          if ([...room.members.values()].filter((m) => m.sockets.size > 0).every((m) => L.finishedAt.has(m.id))) this.schedule(room, 1200, () => this.finishLadder(room));
+        }
+        break;
+      }
       case 'draft':
         if (room.phase !== 'playing' && room.phase !== 'stopping') return;
         member.draft = sanitize(msg.answers, room.categories);
@@ -150,7 +171,7 @@ export class Parties {
         break;
       case 'again':
         if (!host || room.phase !== 'final') return;
-        room.phase = 'lobby'; room.round = 0; room.letter = null; room.judged = null; room.roundPoints = null;
+        room.phase = 'lobby'; room.round = 0; room.letter = null; room.judged = null; room.roundPoints = null; room.ladder = null;
         for (const m of room.members.values()) m.total = 0;
         break;
     }
@@ -158,7 +179,9 @@ export class Parties {
   }
 
   private async nextRound(room: Room) {
+    if (room.settings.game === 'ladder') return this.nextLadder(room);
     room.round++;
+    room.ladder = null;
     let letter: string;
     let bonus: Category;
     if (room.round === 1 && room.settings.startWithDaily) {
@@ -183,6 +206,37 @@ export class Parties {
       this.broadcast(room);
       this.schedule(room, room.settings.seconds * 1000, () => this.stop(room, null));
     });
+  }
+
+  private nextLadder(room: Room) {
+    room.round++;
+    const seed = hash32(`${room.code}:${room.round}:${Date.now()}`);
+    const kinds = ['classic', 'moves', 'locked'] as const;
+    room.ladder = { puzzle: makePuzzle(seed, { kind: kinds[seed % 3], daily: false }), paths: new Map(), finishedAt: new Map() };
+    room.letter = null; room.categories = []; room.judged = null; room.roundPoints = null; room.stoppedBy = null;
+    room.phase = 'reveal';
+    room.endsAt = Date.now() + REVEAL_MS;
+    this.broadcast(room);
+    this.schedule(room, REVEAL_MS, () => {
+      room.phase = 'playing';
+      room.endsAt = Date.now() + room.settings.seconds * 1000;
+      this.broadcast(room);
+      this.schedule(room, room.settings.seconds * 1000, () => this.finishLadder(room));
+    });
+  }
+
+  /** Points by finishing place: 10, 7, 5, 4, 3, 2 (and 2 for anyone else who made it); 0 if you didn't reach the top. */
+  private finishLadder(room: Room) {
+    if (room.phase !== 'playing' || !room.ladder) return;
+    const order = [...room.ladder.finishedAt.entries()].sort((a, b) => a[1] - b[1]).map(([pid]) => pid);
+    const points: Record<string, number> = {};
+    for (const m of room.members.values()) points[m.id] = 0;
+    order.forEach((pid, i) => { points[pid] = RACE_POINTS[Math.min(i, RACE_POINTS.length - 1)]; });
+    for (const [pid, p] of Object.entries(points)) { const m = room.members.get(pid); if (m) m.total += p; }
+    room.roundPoints = points;
+    room.phase = 'scores';
+    room.endsAt = null;
+    this.broadcast(room);
   }
 
   private stop(room: Room, by: string | null) {
@@ -253,12 +307,29 @@ export class Parties {
       }
     }
     return {
+      ladder: this.ladderView(room, viewer),
       code: room.code, phase: room.phase, settings: room.settings, round: room.round, letter: room.phase === 'lobby' ? null : room.letter,
       categories: room.categories, endsAt: room.endsAt, serverNow: Date.now(), stoppedBy: room.stoppedBy, review, roundPoints: room.roundPoints,
       players: [...room.members.values()].sort((a, b) => a.joinedAt - b.joinedAt).map((m) => ({
         id: m.id, name: m.name, connected: m.sockets.size > 0, host: m.id === room.hostId, total: m.total,
         filled: room.categories.filter((c) => (m.draft[c] ?? '').trim()).length, me: m.id === viewer,
       })),
+    };
+  }
+
+  private ladderView(room: Room, viewer: string): PartyState['ladder'] {
+    const L = room.ladder;
+    if (!L || room.phase === 'lobby' || room.phase === 'final' && !room.roundPoints) return null;
+    const over = room.phase === 'scores' || room.phase === 'final';
+    const order = [...L.finishedAt.entries()].sort((a, b) => a[1] - b[1]).map(([pid]) => pid);
+    const p = L.puzzle;
+    return {
+      start: p.start, end: p.end, par: p.par, twist: p.twist, myPath: L.paths.get(viewer) ?? [p.start], best: over ? p.best : null,
+      progress: [...room.members.values()].map((m) => {
+        const path = L.paths.get(m.id) ?? [p.start];
+        const place = order.indexOf(m.id);
+        return { playerId: m.id, steps: path.length - 1, done: place >= 0, place: place >= 0 ? place + 1 : null, path: over ? path : null };
+      }),
     };
   }
 

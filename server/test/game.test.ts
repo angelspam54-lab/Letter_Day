@@ -345,3 +345,132 @@ describe('the clue', () => {
     expect(checkTheme('spaceships', set.themeAccept)).toBe(false);
   });
 });
+
+describe('the ladder', () => {
+  it('knows the moves for each twist', async () => {
+    const { moveFor, stepError, shortestRoute, climbPoints, parWord } = await import('../../shared/ladder.js');
+    const dict = new Set(['slap', 'flap', 'flag', 'pals', 'lap', 'clap', 'cold', 'cord', 'card', 'ward', 'warm', 'word', 'worm', 'wold']);
+    const isWord = (w: string) => dict.has(w);
+    expect(moveFor('slap', 'flap', { kind: 'classic' })).toBe('change');
+    expect(moveFor('slap', 'pals', { kind: 'classic' })).toBeNull();
+    expect(moveFor('slap', 'pals', { kind: 'moves' })).toBe('shuffle');
+    expect(moveFor('lap', 'clap', { kind: 'moves' })).toBe('add');
+    expect(moveFor('clap', 'lap', { kind: 'moves' })).toBe('drop');
+    expect(moveFor('slap', 'flap', { kind: 'locked', index: 0 })).toBeNull();
+    expect(stepError('slap', 'flap', { kind: 'locked', index: 0 }, isWord)).toMatch(/Letter 1 is locked/);
+    expect(stepError('slap', 'slop', { kind: 'classic' }, isWord)).toMatch(/not a word/);
+    expect(stepError('flap', 'flog', { kind: 'classic' }, isWord)).toMatch(/exactly one letter/);
+    const route = shortestRoute('cold', 'warm', isWord, { kind: 'classic' })!;
+    expect(route).toHaveLength(5);
+    expect([route[0], route[4]]).toEqual(['cold', 'warm']);
+    expect(climbPoints(4, 4, 0)).toBe(100);
+    expect(climbPoints(3, 4, 0)).toBe(115);
+    expect(climbPoints(6, 4, 1)).toBe(55);
+    expect(parWord(3, 4)).toBe('Birdie!');
+  });
+
+  it('builds a daily ladder; clues, rules, hints, gold and scoring', async () => {
+    const { Ladders, ladderWords } = await import('../src/lib/ladder.js');
+    const { wordCluePoints, climbPoints } = await import('../../shared/ladder.js');
+    const ladders = new Ladders(db);
+    const p = (await game.session(undefined)).player;
+    let d = await ladders.day(p.id, T0);
+    const again = await ladders.day(p.id, T0);
+    expect(again.par).toBe(d.par); // the same puzzle all day
+    expect(d.ready).toBe(false);
+    expect(d.start.word).toBeUndefined();
+    expect(d.start.mask).toMatch(/^[A-Z]_+$/);
+    const puzzle = await ladders.puzzle(d.date);
+    expect(ladderWords().clues[puzzle.start]).toBeTruthy();
+    // Path before solving the words is refused.
+    await expect(ladders.path(p.id, [puzzle.start], T0)).rejects.toThrow(/Solve or reveal/);
+    // One wrong guess, then solve the start; reveal the end.
+    const w1 = await ladders.guess(p.id, 'start', 'zzzz', T0);
+    expect(w1.result).toBe('wrong');
+    expect(w1.day.start.mask.replace(/_/g, '').length).toBe(2);
+    expect((await ladders.guess(p.id, 'start', puzzle.start, T0)).result).toBe('correct');
+    d = await ladders.reveal(p.id, 'end', T0);
+    expect(d.ready).toBe(true);
+    expect(d.breakdown.clues).toBe(wordCluePoints(true, 1));
+    // Bad steps are refused with a reason.
+    await expect(ladders.path(p.id, [puzzle.start, 'zzzz'], T0)).rejects.toThrow(/ZZZZ/);
+    await expect(ladders.path(p.id, ['nope'], T0)).rejects.toThrow(/start word/);
+    // A hint adds the next step of a shortest route; then climb the rest of a best route.
+    d = await ladders.hint(p.id, T0);
+    expect(d.rungs).toHaveLength(2);
+    expect(d.hints).toBe(1);
+    const { shortestRoute } = await import('../../shared/ladder.js');
+    const W = ladderWords();
+    const rest = shortestRoute(d.rungs[1].word, puzzle.end, W.isCommon, puzzle.twist, 8, W.anagramsCommon)!;
+    d = await ladders.path(p.id, [puzzle.start, ...rest], T0);
+    expect(d.finished).toBe(true);
+    expect(d.steps).toBe(rest.length);
+    expect(d.best).toEqual(puzzle.best);
+    const gold = d.rungs.filter((r) => r.gold).length;
+    expect(d.breakdown).toEqual({ clues: wordCluePoints(true, 1), climb: climbPoints(d.steps!, d.par, 1), gold: Math.min(3, gold) * 10 });
+    expect(d.score).toBe(d.breakdown.clues + d.breakdown.climb + d.breakdown.gold);
+    await expect(ladders.path(p.id, [puzzle.start], T0)).rejects.toThrow(/already finished/);
+  });
+
+  it('makes every twist, with a reachable gold word on daily puzzles', async () => {
+    const { makePuzzle, ladderWords } = await import('../src/lib/ladder.js');
+    const { distances } = await import('../../shared/ladder.js');
+    const W = ladderWords();
+    for (const kind of ['classic', 'moves', 'locked'] as const) {
+      for (let i = 0; i < 3; i++) {
+        const p = makePuzzle(777 + i, { kind, daily: true });
+        expect(p.twist.kind).toBe(kind);
+        expect(p.best[0]).toBe(p.start);
+        expect(p.best[p.best.length - 1]).toBe(p.end);
+        expect(p.best.length - 1).toBe(p.par);
+        expect(p.par).toBeGreaterThanOrEqual(4);
+        const a = kind === 'moves' ? W.anagramsCommon : undefined;
+        const dS = distances(p.start, W.isCommon, p.twist, p.par + 2, a), dE = distances(p.end, W.isCommon, p.twist, p.par + 2, a);
+        const gold = [...W.gold(p.theme.key)].filter((w) => w !== p.start && w !== p.end && (dS.get(w) ?? 99) + (dE.get(w) ?? 99) <= p.par + 2);
+        expect(gold.length, `${p.start}->${p.end} ${p.theme.key}`).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it('races in a party room: same ladder, places score 10 then 7', async () => {
+    vi.useFakeTimers();
+    const parties = new Parties(async () => ({ letter: 'K', bonus: 'colour' }));
+    const code = parties.create();
+    const host = new FakeSocket(), guest = new FakeSocket();
+    parties.connect(host as any, 'r-host');
+    parties.connect(guest as any, 'r-guest');
+    host.say({ t: 'join', code, token: 'x', name: 'Ada' });
+    guest.say({ t: 'join', code, token: 'y', name: 'Bayo' });
+    host.say({ t: 'settings', game: 'ladder', rounds: 3 });
+    expect(host.last.settings).toMatchObject({ game: 'ladder', seconds: 120, rounds: 3 });
+    host.say({ t: 'start' });
+    await vi.advanceTimersByTimeAsync(10);
+    expect(host.last.phase).toBe('reveal');
+    const L = host.last.ladder!;
+    expect(guest.last.ladder!.start).toBe(L.start);
+    await vi.advanceTimersByTimeAsync(3000);
+    expect(host.last.phase).toBe('playing');
+    // A bad step is refused; the route survives.
+    guest.say({ t: 'ladder', path: [L.start, 'qqqq'] });
+    expect(guest.errors.at(-1)).toMatch(/QQQQ/);
+    const room = parties.peek(code)!;
+    const best = room.ladder!.puzzle.best;
+    guest.say({ t: 'ladder', path: best.slice(0, 2) });
+    expect(host.last.ladder!.progress.find((p) => p.playerId === 'r-guest')!.steps).toBe(1);
+    expect(host.last.ladder!.progress.find((p) => p.playerId === 'r-guest')!.path).toBeNull(); // no peeking mid-race
+    guest.say({ t: 'ladder', path: best });
+    host.say({ t: 'ladder', path: best });
+    await vi.advanceTimersByTimeAsync(1500);
+    expect(host.last.phase).toBe('scores');
+    expect(host.last.roundPoints).toEqual({ 'r-guest': 10, 'r-host': 7 });
+    expect(host.last.ladder!.best).toEqual(best);
+    host.say({ t: 'next' });
+    await vi.advanceTimersByTimeAsync(10);
+    expect(host.last.round).toBe(2);
+    // Nobody finishes: time runs out, no points.
+    await vi.advanceTimersByTimeAsync(3000 + 120_000);
+    expect(host.last.phase).toBe('scores');
+    expect(host.last.roundPoints).toEqual({ 'r-guest': 0, 'r-host': 0 });
+    vi.useRealTimers();
+  });
+});

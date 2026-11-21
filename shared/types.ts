@@ -1,3 +1,4 @@
+import type { Twist } from './ladder.js';
 // API + realtime contract between the Letter Day server and any client.
 import type { Category, Status, Tier } from './game.js';
 export type { Category, Status, Tier };
@@ -109,7 +110,7 @@ export interface PartyState {
   code: string;
   phase: PartyPhase;
   players: PartyPlayer[];
-  settings: { rounds: number; seconds: number; startWithDaily: boolean };
+  settings: { rounds: number; seconds: number; startWithDaily: boolean; game: PartyGame };
   round: number; // 1-based, 0 in lobby
   letter: string | null;
   categories: Category[];
@@ -119,11 +120,17 @@ export interface PartyState {
   /** review/scores: category -> judgements (others' answers are only sent once the round is over). */
   review: Partial<Record<Category, PartyJudgement[]>> | null;
   roundPoints: Record<string, number> | null;
+  /** Ladder races only. */
+  ladder: PartyLadder | null;
 }
+
+/** What a party room plays: the classic letter round, or a ladder race. */
+export type PartyGame = 'letters' | 'ladder';
 
 export type ClientMsg =
   | { t: 'join'; code: string; token: string; name: string }
-  | { t: 'settings'; rounds?: number; seconds?: number; startWithDaily?: boolean }
+  | { t: 'settings'; rounds?: number; seconds?: number; startWithDaily?: boolean; game?: PartyGame }
+  | { t: 'ladder'; path: string[] }
   | { t: 'start' }
   | { t: 'draft'; answers: Partial<Record<Category, string>> }
   | { t: 'stop'; answers: Partial<Record<Category, string>> }
@@ -168,3 +175,53 @@ export interface ClueDay {
 }
 
 export interface ClueGuessResponse { result: 'correct' | 'close' | 'wrong'; day: ClueDay }
+
+// ---------- The Ladder ----------
+export interface LadderWordClue {
+  clue: string;
+  length: number;
+  /** e.g. "C___" – first letter, plus one more per wrong guess. */
+  mask: string;
+  guesses: string[];
+  solved: boolean;
+  revealed: boolean;
+  /** Once solved or revealed. */
+  word?: string;
+}
+export interface LadderRung { word: string; gold: boolean }
+export interface LadderDay {
+  date: string;
+  number: number;
+  twist: Twist;
+  /** Words on this theme glow gold on your route. */
+  theme: { key: string; label: string };
+  par: number;
+  start: LadderWordClue;
+  end: LadderWordClue;
+  /** Both ends known: the climb is open. */
+  ready: boolean;
+  /** Your route so far, start first (empty until ready). */
+  rungs: LadderRung[];
+  hints: number;
+  finished: boolean;
+  steps: number | null;
+  score: number;
+  breakdown: { clues: number; climb: number; gold: number };
+  /** Once finished: a shortest everyday route. */
+  best?: string[];
+  players: number;
+  finishedPct?: number;
+  avgSteps?: number;
+}
+export interface LadderGuessResponse { result: 'correct' | 'close' | 'wrong'; day: LadderDay }
+export interface PartyLadder {
+  start: string;
+  end: string;
+  par: number;
+  twist: Twist;
+  /** Your own route this round. */
+  myPath: string[];
+  /** Shown once the round is over. */
+  best: string[] | null;
+  progress: { playerId: string; steps: number; done: boolean; place: number | null; path: string[] | null }[];
+}

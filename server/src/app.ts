@@ -8,6 +8,7 @@ import type { Db } from './db/index.js';
 import { Game, HttpError, toPlayer } from './lib/game.js';
 import { Parties } from './lib/party.js';
 import { Clues, loadClueSets, type ClueSet } from './lib/clue.js';
+import { Ladders, ladderWords } from './lib/ladder.js';
 import { PngCache, defaultSvg, renderPng, resultSvg } from './lib/card.js';
 import { invitePageHtml, sharePageHtml } from './lib/sharePage.js';
 import { RateLimiter } from './lib/rateLimit.js';
@@ -18,6 +19,7 @@ import type { BootstrapResponse } from '../../shared/types.js';
 export function createApp(db: Db, opts: { clientDist?: string; clueSets?: ClueSet[] } = {}) {
   const game = new Game(db);
   const clues = new Clues(db, opts.clueSets ?? loadClueSets());
+  const ladders = new Ladders(db);
   const parties = new Parties(async () => { const d = await game.day(lagosDate()); return { letter: d.letter, bonus: d.bonus }; });
   const app = new Hono();
   const pngCache = new PngCache();
@@ -123,6 +125,18 @@ export function createApp(db: Db, opts: { clientDist?: string; clueSets?: ClueSe
     if (!Number.isInteger(b.index)) throw new HttpError(400, 'Bad request');
     return c.json(await clues.giveUp((await me(c)).id, b.index));
   });
+  // The Ladder
+  const which = (v: unknown) => { if (v !== 'start' && v !== 'end') throw new HttpError(400, 'Bad request'); return v; };
+  api.get('/ladder', async (c) => c.json(await ladders.day((await me(c)).id)));
+  api.post('/ladder/guess', async (c) => { const b = await c.req.json<{ which: string; guess: string }>(); return c.json(await ladders.guess((await me(c)).id, which(b.which), String(b.guess ?? ''))); });
+  api.post('/ladder/reveal', async (c) => { const b = await c.req.json<{ which: string }>(); return c.json(await ladders.reveal((await me(c)).id, which(b.which))); });
+  api.post('/ladder/path', async (c) => { const b = await c.req.json<{ path: unknown }>(); return c.json(await ladders.path((await me(c)).id, b.path)); });
+  api.post('/ladder/hint', async (c) => c.json(await ladders.hint((await me(c)).id)));
+  let wordsText: string | null = null;
+  api.get('/ladder/words', (c) => {
+    wordsText ??= [...ladderWords().all].join('\n');
+    return c.text(wordsText, 200, { 'cache-control': 'public, max-age=86400' });
+  });
   api.post('/clue/nudge', async (c) => c.json(await clues.nudge((await me(c)).id)));
 
   api.post('/party', async (c) => { await me(c); return c.json({ code: parties.create() }); });
@@ -182,5 +196,5 @@ export function createApp(db: Db, opts: { clientDist?: string; clueSets?: ClueSe
     app.use('/*', serveStatic({ root: dist, precompressed: true }));
     app.get('*', (c) => { c.header('Cache-Control', 'no-cache'); return c.html(indexHtml); });
   }
-  return { app, game, parties, clues };
+  return { app, game, parties, clues, ladders };
 }

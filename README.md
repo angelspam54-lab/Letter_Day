@@ -55,6 +55,19 @@ Environment variables:
 
 Party Rooms are held in memory, so run a single instance. Moving rooms to Redis would allow more instances.
 
+## Rarity before there are many players
+`server/src/data/expected.json` lists the answers most people give for each category and letter, with a rough share of players. Rarity blends it in as if 20 people had already played, fading out once a category has 200 real answers, so obvious answers (Dog for D) don't score as rare on quiet days. Combo answers (a known word plus a word from the category: "Duck egg", "Van tyre") count, but score at most "uncommon". Hand-added words (Nigerian states, names, foods, planets and more) live in `server/src/data/words/extra/`; `extra/name-nicknames.txt` adds short forms like Vicky and Trish from [carltonnorthern/nicknames](https://github.com/carltonnorthern/nicknames) (Apache 2.0).
+
+## The Ladder
+A daily word ladder (`/api/ladder`, `server/src/lib/ladder.ts`, rules in `shared/ladder.ts`):
+- the start and end words hide behind short clues (`server/src/data/ladder/clues.json`); solve them for points or reveal them;
+- climb one word at a time; par is the shortest route through everyday words, and beating it scores extra (golf style);
+- a twist each day, in turn: Classic, Extra moves (add, drop or shuffle letters), Locked letter;
+- gold words: words on the day's theme (from Letter Day's category lists) score a bonus when they're on your route;
+- a hint adds the next step of a shortest route.
+Party Rooms can play a **Ladder race** instead of letter rounds: same ladder for everyone, points by finishing place.
+Word data is built by `tools/build-ladder.mjs` from [SCOWL](http://wordlist.aspell.net/) word lists (via `wordlist-english`, MIT) plus Naija words.
+
 ## The Clue preview
 `CLUES=server/src/data/clues.json npx vite build -c client/vite.preview.config.ts` (run in `client/`), then `node scripts/inline-preview.mjs client/dist-preview out.html` makes a single HTML file that plays every Clue set in the browser with no server.
 
