@@ -45,3 +45,10 @@ export function clueShareText(d: import('../../../shared/types').ClueDay): strin
   const row = d.clues.map((c) => (!c.solved ? '🟥' : c.guesses.length === 1 && c.hints === 0 ? '🟩' : '🟨')).join('');
   return `Letter Day · The Clue #${d.number} (${d.letter})\n${row} ${d.theme.solved ? '🧩' : '❓'}\n${d.score} pts\n${location.origin}/?play=clue`;
 }
+
+/** The Ladder: one square per step (🟨 gold word, 🟩 the top), no words given away. */
+export function ladderShareText(d: import('../../../shared/types').LadderDay): string {
+  const row = d.rungs.slice(1).map((r, i, a) => (i === a.length - 1 ? '🟩' : r.gold ? '🟨' : '⬜')).join('');
+  const gold = d.rungs.filter((r) => r.gold).length;
+  return `Letter Day · The Ladder #${d.number}\n🪜 ${d.steps} steps (par ${d.par})${gold ? ` · ${gold} gold` : ''}\n${row}\n${d.score} pts\n${location.origin}/?play=ladder`;
+}

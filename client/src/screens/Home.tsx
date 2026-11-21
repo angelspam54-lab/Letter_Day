@@ -1,3 +1,4 @@
+import { twistLabel as twistLabelShort } from '../../../shared/ladder';
 import { useState } from 'preact/hooks';
 import type { App } from '../App';
 import { TopBar } from '../components/TopBar';
@@ -75,6 +76,16 @@ export function Home({ app }: { app: App }) {
               <span class="grow">
                 <b class="h3">The Clue</b>
                 <span class="small muted">{app.clue.finished ? `${app.clue.score} points · ${app.clue.clues.filter((c) => c.solved).length}/6${app.clue.theme.solved ? ' + theme' : ''}` : app.clue.clues.some((c) => c.done) ? `${app.clue.clues.filter((c) => c.done).length} of 6 done · keep going` : `Six riddles on ${today.letter} and a hidden theme. No timer.`}</span>
+              </span>
+              <IconArrow size={18} />
+            </button>
+          )}
+          {app.ladder && (
+            <button class="panel clue-promo" onClick={() => app.go('ladder')}>
+              <span class="cp-ladder" aria-hidden="true"><i>{(app.ladder.start.word ?? '?')[0].toUpperCase()}</i><i /><i /><i /></span>
+              <span class="grow">
+                <b class="h3">The Ladder</b>
+                <span class="small muted">{app.ladder.finished ? `${app.ladder.score} points · ${app.ladder.steps} steps, par ${app.ladder.par}` : app.ladder.ready ? `${app.ladder.rungs.length - 1} steps so far · keep climbing` : `Change one word into another, a step at a time. Today: ${twistLabelShort(app.ladder.twist)}.`}</span>
               </span>
               <IconArrow size={18} />
             </button>

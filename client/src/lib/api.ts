@@ -1,5 +1,5 @@
 import type {
-  BoardEntry, BootstrapResponse, ClueDay, ClueGuessResponse, DailyResult, DayInfo, GroupDetail, GroupSummary, Player, SharePreview, Stats, SubmitResponse,
+  BoardEntry, BootstrapResponse, ClueDay, ClueGuessResponse, LadderDay, LadderGuessResponse, DailyResult, DayInfo, GroupDetail, GroupSummary, Player, SharePreview, Stats, SubmitResponse,
 } from '../../../shared/types';
 import type { Category } from '../../../shared/game';
 import { store } from './storage';
@@ -62,6 +62,11 @@ export const api = {
   clueHint: (index: number) => req<ClueDay>('/clue/hint', { method: 'POST', body: { index } }),
   clueTheme: (guess: string) => req<ClueGuessResponse>('/clue/theme', { method: 'POST', body: { guess } }),
   clueGiveUp: (index: number) => req<ClueDay>('/clue/giveup', { method: 'POST', body: { index } }),
+  ladder: () => req<LadderDay>('/ladder'),
+  ladderGuess: (which: 'start' | 'end', guess: string) => req<LadderGuessResponse>('/ladder/guess', { method: 'POST', body: { which, guess } }),
+  ladderReveal: (which: 'start' | 'end') => req<LadderDay>('/ladder/reveal', { method: 'POST', body: { which } }),
+  ladderPath: (path: string[]) => req<LadderDay>('/ladder/path', { method: 'POST', body: { path } }),
+  ladderHint: () => req<LadderDay>('/ladder/hint', { method: 'POST' }),
   clueNudge: () => req<ClueDay>('/clue/nudge', { method: 'POST' }),
   createParty: () => req<{ code: string }>('/party', { method: 'POST' }),
   partyExists: (code: string) => req<{ exists: boolean }>(`/party/${encodeURIComponent(code)}`),

@@ -9,6 +9,8 @@ import { api } from '../lib/api';
 import { fx } from '../lib/fx';
 import { copy, whatsappUrl } from '../lib/share';
 import { AnswerForm } from '../components/AnswerForm';
+import { LadderBoard, TwistChip, WordTiles } from '../components/LadderBoard';
+import { RACE_POINTS, RACE_SECONDS_OPTIONS, twistHelp } from '../../../shared/ladder';
 import { Avatar, CatChip, LetterSpinner, LetterTile } from '../components/Bits';
 import { IconClose, IconCopy, IconCrown, IconThumbDown, IconThumbUp, IconWhatsApp } from '../components/Icons';
 import { toast } from '../components/Toast';
@@ -77,7 +79,8 @@ function Room({ app, code, name }: { app: App; code: string; name: string }) {
   const stop = () => { if (allFilled) { fx.correct(); send({ t: 'stop', answers: values }); } };
   const leave = () => app.go('home');
   const link = `${location.origin}/p/${code}`;
-  const invite = `Join my Letter Day party! Name, Animal, Place, Thing, Food. First to finish calls STOP. ${link}`;
+  const ladderGame = s.settings.game === 'ladder';
+  const invite = ladderGame ? `Join my Letter Day ladder race! Same word ladder for everyone, first to the top wins. ${link}` : `Join my Letter Day party! Name, Animal, Place, Thing, Food. First to finish calls STOP. ${link}`;
   const nameOf = (id: string | null) => s.players.find((p) => p.id === id)?.name ?? 'Someone';
 
   return (
@@ -109,9 +112,14 @@ function Room({ app, code, name }: { app: App; code: string; name: string }) {
           </section>
           <section class="panel">
             <h2 class="h3">Game settings</h2>
+            <div class="setting-row"><span>Game</span><div class="segmented small">
+              <button class={!ladderGame ? 'on' : ''} disabled={!host} onClick={() => send({ t: 'settings', game: 'letters' })}>Letter round</button>
+              <button class={ladderGame ? 'on' : ''} disabled={!host} onClick={() => send({ t: 'settings', game: 'ladder' })}>Ladder race</button>
+            </div></div>
+            <p class="small muted">{ladderGame ? `Everyone climbs the same word ladder. First to the top scores ${RACE_POINTS[0]}, then ${RACE_POINTS.slice(1, 4).join(', ')}…` : 'Name, Animal, Place, Thing, Food and a bonus. First to fill every box calls STOP.'}</p>
             <div class="setting-row"><span>Rounds</span><div class="segmented small">{PARTY_ROUND_OPTIONS.map((n) => <button key={n} class={s.settings.rounds === n ? 'on' : ''} disabled={!host} onClick={() => send({ t: 'settings', rounds: n })}>{n}</button>)}</div></div>
-            <div class="setting-row"><span>Time limit</span><div class="segmented small">{PARTY_SECONDS_OPTIONS.map((n) => <button key={n} class={s.settings.seconds === n ? 'on' : ''} disabled={!host} onClick={() => send({ t: 'settings', seconds: n })}>{n}s</button>)}</div></div>
-            <label class="setting-row"><span>Start with today's letter ({app.today.letter})</span><input type="checkbox" class="switch" checked={s.settings.startWithDaily} disabled={!host} onChange={(e) => send({ t: 'settings', startWithDaily: (e.target as HTMLInputElement).checked })} /></label>
+            <div class="setting-row"><span>Time limit</span><div class="segmented small">{(ladderGame ? RACE_SECONDS_OPTIONS : PARTY_SECONDS_OPTIONS).map((n) => <button key={n} class={s.settings.seconds === n ? 'on' : ''} disabled={!host} onClick={() => send({ t: 'settings', seconds: n })}>{n}s</button>)}</div></div>
+            {!ladderGame && <label class="setting-row"><span>Start with today's letter ({app.today.letter})</span><input type="checkbox" class="switch" checked={s.settings.startWithDaily} disabled={!host} onChange={(e) => send({ t: 'settings', startWithDaily: (e.target as HTMLInputElement).checked })} /></label>}
             {host ? <button class="btn primary xl block" onClick={() => send({ t: 'start' })}>Start the game</button> : <p class="small muted center">The host will start the game.</p>}
           </section>
         </main>
@@ -183,8 +191,84 @@ function Room({ app, code, name }: { app: App; code: string; name: string }) {
         </main>
       )}
 
+      {s.ladder && s.phase === 'reveal' && (
+        <main class="reveal-screen">
+          <span class="kicker">Round {s.round} · ladder race</span>
+          <WordTiles word={s.ladder.start} tone="start" /><span class="muted">to</span><WordTiles word={s.ladder.end} tone="goal" />
+          <TwistChip twist={s.ladder.twist} /><span class="small muted">{twistHelp(s.ladder.twist)}</span>
+        </main>
+      )}
+
+      {s.ladder && s.phase === 'playing' && (() => {
+        const L = s.ladder;
+        const mine = L.progress.find((p) => p.playerId === me?.id);
+        return (
+          <>
+            <div class="party-bar">
+              <TwistChip twist={L.twist} />
+              <span class="grow" />
+              <span class={`pb-time ${Math.ceil(left / 1000) <= 10 ? 'urgent' : ''}`}>{Math.ceil(left / 1000)}</span>
+            </div>
+            <main class="page play-page">
+              <section class="panel">
+                <LadderBoard start={L.start} end={L.end} twist={L.twist} path={L.myPath} par={L.par} done={!!mine?.done}
+                  onChange={(path) => { send({ t: 'ladder', path }); }} />
+                {mine?.done && <p class="center"><b>You made it, {ordinal(mine.place!)}!</b> <span class="muted">Waiting for the others…</span></p>}
+              </section>
+              <RaceProgress s={s} />
+            </main>
+          </>
+        );
+      })()}
+
+      {s.ladder && s.phase === 'scores' && (
+        <main class="page review">
+          <header class="review-head">
+            <WordTiles word={s.ladder.start} tone="start" />
+            <div><h1 class="h2">Round {s.round} scores</h1><p class="small muted">{s.ladder.start.toUpperCase()} to {s.ladder.end.toUpperCase()}, par {s.ladder.par}</p></div>
+          </header>
+          <Scoreboard s={s} />
+          <section class="panel stack-sm">
+            <h2 class="h3">Routes</h2>
+            {[...s.ladder.progress].sort((a, b) => (a.place ?? 99) - (b.place ?? 99)).map((p) => (
+              <div key={p.playerId} class="stack-xs">
+                <span class="row gap-sm"><Avatar id={p.playerId} name={nameOf(p.playerId)} size={24} /><b>{nameOf(p.playerId)}</b><span class="small muted">{p.done ? `${ordinal(p.place!)} · ${p.steps} steps` : `didn't reach the top (${p.steps} steps)`}</span></span>
+                <div class="route">{(p.path ?? []).map((w, i) => <span key={i}>{w}</span>)}</div>
+              </div>
+            ))}
+            {s.ladder.best && <div class="stack-xs"><span class="small muted">A shortest route ({s.ladder.best.length - 1} steps):</span><div class="route">{s.ladder.best.map((w, i) => <span key={i}>{w}</span>)}</div></div>}
+          </section>
+          <div class="sticky-actions">
+            {host ? <button class="btn primary xl block" onClick={() => send({ t: 'next' })}>{s.round >= s.settings.rounds ? 'See final results' : `Next round (${s.round + 1} of ${s.settings.rounds})`}</button> : <p class="small muted center">Waiting for the host…</p>}
+          </div>
+        </main>
+      )}
+
       {s.phase === 'final' && <Final s={s} host={host} send={send} leave={leave} />}
     </div>
+  );
+}
+
+const ordinal = (n: number) => `${n}${n % 10 === 1 && n % 100 !== 11 ? 'st' : n % 10 === 2 && n % 100 !== 12 ? 'nd' : n % 10 === 3 && n % 100 !== 13 ? 'rd' : 'th'}`;
+
+function RaceProgress({ s }: { s: PartyState }) {
+  const L = s.ladder!;
+  return (
+    <section class="panel">
+      <h2 class="h3">Race</h2>
+      <ol class="race-progress">
+        {L.progress.map((p) => {
+          const pl = s.players.find((x) => x.id === p.playerId);
+          return (
+            <li key={p.playerId} class={p.done ? 'done' : ''}>
+              <Avatar id={p.playerId} name={pl?.name ?? '?'} size={26} />
+              <span class="bar"><i style={{ width: `${p.done ? 100 : Math.min(90, (p.steps / Math.max(1, L.par)) * 85)}%` }} /></span>
+              <span class="small mono">{p.done ? ordinal(p.place!) : `${p.steps} ${p.steps === 1 ? 'step' : 'steps'}`}</span>
+            </li>
+          );
+        })}
+      </ol>
+    </section>
   );
 }
 

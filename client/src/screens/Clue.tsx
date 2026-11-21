@@ -14,7 +14,7 @@ import { clueShareText, copy, shareOrCopy, whatsappUrl } from '../lib/share';
 const colorOf = (cat: string) => (CATEGORY_COLOR as Record<string, string>)[cat] ?? '#c49a12';
 
 /** Letter blanks as tiles; spaces become gaps. */
-function Blanks({ mask, tone }: { mask: string; tone?: 'good' | 'bad' }) {
+export function Blanks({ mask, tone }: { mask: string; tone?: 'good' | 'bad' }) {
   return (
     <span class={`blanks ${tone ?? ''}`} aria-label={mask.replace(/_/g, ' blank ')}>
       {mask.split(' ').map((word, w) => (

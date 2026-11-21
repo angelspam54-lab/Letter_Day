@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'preact/hooks';
-import type { ClueDay, DailyResult, DayInfo, GroupSummary, Player, SharePreview } from '../../shared/types';
+import type { LadderDay, ClueDay, DailyResult, DayInfo, GroupSummary, Player, SharePreview } from '../../shared/types';
 import { api, ApiError } from './lib/api';
 import { syncClock } from './lib/clock';
 import { store } from './lib/storage';
@@ -11,11 +11,12 @@ import { Party } from './screens/Party';
 import { Board } from './screens/Board';
 import { Stats } from './screens/Stats';
 import { Clue } from './screens/Clue';
+import { Ladder } from './screens/Ladder';
 import { Toast, toast } from './components/Toast';
 import { LetterTile } from './components/Bits';
 import { HowToPlay } from './components/Sheet';
 
-export type Screen = 'home' | 'play' | 'result' | 'group' | 'party' | 'board' | 'stats' | 'clue';
+export type Screen = 'home' | 'play' | 'result' | 'group' | 'party' | 'board' | 'stats' | 'clue' | 'ladder';
 
 export interface App {
   screen: Screen;
@@ -25,6 +26,8 @@ export interface App {
   result: DailyResult | null;
   clue: ClueDay | null;
   setClue: (c: ClueDay) => void;
+  ladder: LadderDay | null;
+  setLadder: (l: LadderDay) => void;
   challenger: SharePreview | null;
   groupCode: string | null;
   partyCode: string | null;
@@ -45,6 +48,7 @@ export function App() {
   const [groups, setGroups] = useState<GroupSummary[]>([]);
   const [result, setResult] = useState<DailyResult | null>(null);
   const [clue, setClue] = useState<ClueDay | null>(null);
+  const [ladder, setLadder] = useState<LadderDay | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [screen, setScreen] = useState<Screen>('home');
   const [groupCode, setGroupCode] = useState<string | null>(null);
@@ -70,6 +74,7 @@ export function App() {
       setToday(r.today);
       setGroups(r.groups);
       api.clue().then(setClue).catch(() => setClue(null));
+      api.ladder().then(setLadder).catch(() => setLadder(null));
       if (r.today.status === 'done') api.result().then(setResult).catch(() => {});
       else setResult(null);
       return r;
@@ -86,6 +91,7 @@ export function App() {
       const q = new URLSearchParams(location.search);
       try { history.replaceState({ screen: 'home' }, '', location.pathname); } catch { /* ignore */ }
       if (q.get('play') === 'clue') go('clue');
+      if (q.get('play') === 'ladder') go('ladder');
       const from = q.get('from');
       if (from) api.share(from).then(setChallenger).catch(() => {});
       const g = q.get('g');
@@ -105,7 +111,7 @@ export function App() {
         const { exists } = await api.partyExists(p).catch(() => ({ exists: false }));
         if (exists) { setPartyCode(p.toUpperCase()); go('party'); } else toast('That party room has closed. Ask for a new link.');
       }
-      if (q.get('play') !== 'clue' && !from && !g && !p && r.player.gamesPlayed === 0 && !r.today.status && store.get('ld.seenHelp') !== '1') setHelp(true);
+      if (!q.get('play') && !from && !g && !p && r.player.gamesPlayed === 0 && !r.today.status && store.get('ld.seenHelp') !== '1') setHelp(true);
     })();
     const onPop = (e: PopStateEvent) => setScreen((e.state?.screen as Screen) ?? 'home');
     window.addEventListener('popstate', onPop);
@@ -134,7 +140,7 @@ export function App() {
   }
 
   const app: App = {
-    screen, player, today, groups, result, clue, setClue, challenger, groupCode, partyCode, go,
+    screen, player, today, groups, result, clue, setClue, ladder, setLadder, challenger, groupCode, partyCode, go,
     openGroup: (code) => { setGroupCode(code); go('group'); },
     openParty: (code) => { setPartyCode(code.toUpperCase()); go('party'); },
     setPlayer, setToday, setResult,
@@ -153,6 +159,7 @@ export function App() {
       {screen === 'board' && <Board app={app} />}
       {screen === 'stats' && <Stats app={app} />}
       {screen === 'clue' && <Clue app={app} />}
+      {screen === 'ladder' && <Ladder app={app} />}
       {help && <HowToPlay onClose={() => { setHelp(false); store.set('ld.seenHelp', '1'); }} />}
       <Toast />
     </div>
