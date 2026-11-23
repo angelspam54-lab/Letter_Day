@@ -85,6 +85,9 @@ describe('rules', () => {
 
 describe('daily', () => {
   it('runs the 60-second round on the server clock, scores rarity, and builds streaks', async () => {
+    // Streaks are judged against "today", so pin the clock to the test's days.
+    vi.useFakeTimers({ toFake: ['Date'] });
+    vi.setSystemTime(T0);
     const a = await game.session(undefined);
     const b = await game.session(undefined);
     const day = await game.today(a.player, T0);
@@ -115,9 +118,11 @@ describe('daily', () => {
 
     // Next day: streak 2.
     const d2 = new Date(T0.getTime() + 86400_000);
+    vi.setSystemTime(d2);
     await game.start(a.player, d2);
     const next = await game.submit(a.player, await answersFor((await game.today(a.player, d2)).letter, 1), at(10, d2));
     expect(next.player.currentStreak).toBe(2);
+    vi.useRealTimers();
   });
 
   it('enforces the timer: late answers fall back to what was saved before the deadline', async () => {

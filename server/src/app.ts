@@ -35,7 +35,10 @@ export function createApp(db: Db, opts: { clientDist?: string; clueSets?: ClueSe
     contentSecurityPolicy: {
       defaultSrc: ["'self'"], imgSrc: ["'self'", 'data:', 'blob:'], styleSrc: ["'self'", "'unsafe-inline'"],
       scriptSrc: ["'self'", "'unsafe-inline'"], connectSrc: ["'self'", 'ws:', 'wss:'], manifestSrc: ["'self'"], workerSrc: ["'self'"],
+      // Allow the itch.io game page to show Letter Day in its player frame; nobody else may frame it.
+      frameAncestors: ["'self'", 'https://itch.io', 'https://*.itch.io', 'https://*.itch.zone'],
     },
+    xFrameOptions: false, // superseded by frame-ancestors above
     crossOriginEmbedderPolicy: false,
     crossOriginResourcePolicy: 'cross-origin',
   }));
